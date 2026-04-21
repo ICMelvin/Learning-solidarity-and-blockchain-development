@@ -1,0 +1,119 @@
+⚡ The 2008 Financial Crisis: A Catalyst 
+The crisis was triggered by the U.S. housing bubble collapse and subprime mortgage failures, leading to a massive loss of trust in centralized financial institutions. 
+FameEX
+FameEX
+ +1
+Systemic Failure: Large banks were deemed "too big to fail," leading to massive government bailouts.
+Trust Gap: People felt betrayed by traditional systems, creating a demand for a currency that didn't rely on banking intermediaries.
+Inflation Fears: Government policies and bank bailouts sparked concerns about the devaluation of fiat currency. 
+Bitcoin Magazine Pro
+Bitcoin Magazine Pro
+ +4
+🏗️ The Birth of Bitcoin
+Just 46 days after the collapse of Lehman Brothers, the first official plan for Bitcoin was released. 
+October 31, 2008: The pseudonymous creator Satoshi Nakamoto published the Bitcoin Whitepaper titled "Bitcoin: A Peer-to-Peer Electronic Cash System".
+The Vision: A digital currency that uses cryptographic proof instead of trust, allowing direct peer-to-peer transactions without a central authority. 
+Fibo Crypto
+Fibo Crypto
+ +3
+The Genesis Block and Its Message
+On January 3, 2009, the Bitcoin network officially launched when Nakamoto mined the very first block, known as the Genesis Block. 
+Binance
+Binance
+ +1
+Encoded Message: Nakamoto embedded a specific headline from The Times newspaper: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks".
+Symbolism: This message served as a "birth certificate" and a political critique, highlighting the instability of the existing banking system that Bitcoin was designed to challenge. 
+Investopedia
+Investopedia
+ +4
+📈 Early Evolution and Adoption
+January 12, 2009: The first-ever Bitcoin transaction occurred between Satoshi Nakamoto and programmer Hal Finney.
+May 22, 2010: The first real-world purchase took place—10,000 BTC for two pizzas, known as Bitcoin Pizza Day.
+2011–2013: Bitcoin reached dollar parity and began gaining attention during other financial crises, such as the Cypriot financial crisis in 2013. 
+NBX (Norwegian Block Exchange)
+NBX (Norwegian Block Exchange)
+ +4
+
+ By now, everybody knows that Bitcoin was the first cryptocurrency, but many still have no idea just how much it went through to get to where it is today. If you’re interested in getting a firm footing in Bitcoin’s history, then you’ve come to the right place. This will not be yet another overview of how Bitcoin works. If you’re interested in that, head here. Instead, in this post, we’ll cover the highs and the lows of Bitcoin’s history to paint a fuller picture of how crypto’s leading asset began to be considered the world’s leading hedge and store of value.
+
+‍
+
+
+Born out of Chaos: Bitcoin before Launch
+
+Some claim that Bitcoin was a direct result of the world’s growing lack of faith in the traditional financial system on the heels of the 2008 financial crisis. At a time in which millions lost their hard earned savings while they watched all sorts of banks escape the madness, who wouldn’t be interested in a currency that exists outside of the established markets? While that’s true, that’s only a fraction of the inspiration for Bitcoin. The true heart of it all lies in redefining trust.
+
+
+As Satoshi themselves point out, the key weakness of our global financial system is the fact that a third party has to exist between each sender and receiver of any amount of currency. Through the creation of Bitcoin, Satoshi sought to eliminate the need for any intermediary whatsoever in any part of any transaction. Instead, a new financial system would be created that used “cryptographic proof” to push transactions through, record them, and even create them.
+
+
+With that, Bitcoin began to take shape, and by the close of 2008, it was on the cusp of launching in the form of a network of computers with the ability to create and maintain their own internet-native money.
+
+
+
+
+2009-2012: Bitcoin’s launch and the Cypriot Financial Crisis
+In January 2009, Satoshi “mined” the first Bitcoin block and digital gold was born. While it began at $0 a coin, the more that the network it used, the more bitcoins grew in value, until by November 2011, each Bitcoin was worth $2.51. By the first “halving” a year later, each Bitcoin was worth $12, and a year after that, it had ballooned to $988 a coin, kicking off a trend of crypto’s king reaching new price floors after each halving of its’ issuance. What is perhaps most striking about 2013 is that Bitcoin markets had so few traders that one person reportedly caused its price to jump up to $1000 after several months of steady growth. While some researchers claimed this could have been due to significant market manipulation, it’s more likely that there just simply weren’t that many people trading Bitcoin. As a general rule, with any asset or commodity, the less people that are trading it, the more easily it can be moved.
+
+
+However, through understanding the Cypriot Financial Crisis, which began in 2012, it becomes clear that another key trend was driving Bitcoin’s price growth which has been mirrored time and time again up to the present day.
+
+
+As Cyprus’ financial system began to fall apart, the island nation reached an agreement with the EU that 47.5% of account holdings above 100,000 Euros and 10% of all savings held in Cypriot banks were eventually taken to help fund a 10 Billion Euro bailout of Cyprus’ failing financial system. On the heels of these announcements, Bloomberg’s BusinessWeek ran a story titled, “Bitcoin may be the Global Economy’s Last Safe Haven,” and as Cyprus’ bailout continued to trend, Bitcoin was thrust into the global spotlight as a hedge against the volatility of the traditional system.
+
+‍
+
+2013-2016: Bitcoin’s First Spark
+From March 2013 to the close of 2016, Bitcoin grew from just over $91 a coin to just over $963, despite a precipitous fall in 2014 due to the most widely used Bitcoin exchange, Mt.Gox, shutting down, causing hundreds of thousands of users to lose access to their holdings at once. All in all, the key trend keeping it steady over the long-term was the same economic uncertainty that surfaced in the face of the Cypriot crisis, fueled by other, similar events such as the birth of Brexit.When Bitcoin’s consistently positive long-term growth was considered together with the growing belief that each halving made bitcoins more valuable, it was becoming more and more clear that crypto’s pioneer was a safe haven with unprecedented potential.
+
+‍
+
+2017: The ICO Boom
+As 2017 rolled along, that potential became more and more clear to the world at-large.
+
+
+From start to finish, Bitcoin shot from $900 a coin to $20,000 a coin, buoyed on by the proliferation of Initial Coin Offerings(ICOs), which drove anyone and everyone into crypto for both noble and nefarious reasons. Though all sorts of cryptocurrencies came to be during ICO season, Bitcoin continued to grow due to its status as the first cryptocurrency and consequently, the most secure option on the market. Still, as winter came around, the rumblings grew louder and louder that Bitcoin’s growth was unsustainable and largely based on speculation.
+
+
+By late December, it began to fall, never to climb back to its previous heights until years later.
+
+‍
+
+2018: The Crypto Winter
+On the heels of the collapse of the ICO bubble, 2018 marked what industry insiders now call “the crypto winter,” since, for example, Bitcoin lost 80% of its value and the crypto markets shed $700 billion in capital. Additionally, increasing regulation drove out speculative traders who had fueled a large part of the 2017 rally, leading to a year in which “HODL” became “BUIDL” and crypto became far more focused on compliance. If you’re wondering why Bitcoin didn’t grow much at all in 2018, a good model to use is “far less people were trading it than the year before and considerable trust had been lost in crypto due to ICO-based scams.”
+
+
+As 2018 came to a close, it was time for Bitcoin and crypto to finally shed their Wild West image.
+
+‍
+
+2019-2020: The Rebirth of Digital Gold
+By 2019, the Digital Gold narrative began to slowly but surely return to the spotlight.
+
+
+Trading had finally significantly increased once again, due to the introduction of margin trading across several major exchanges and macro-level events like the announcement of Facebook developing Libra. Investors and traders essentially fell in along two lines in response to the project, with some diving in based on the belief that Libra would make it easier for the world to on-board to crypto and others believing that it strengthened the need for crypto, since it would be a digital currency run by a big tech firm and watched over by an array of national governments.
+
+
+All in all, the majority from both sides saw Libra as a net positive for Bitcoin and the cryptocurrency industry at-large. If Facebook, who had a reputation for tracking its’ users for all sorts of purposes could launch a digital currency, didn’t that add to the need for crypto, since crypto can exist in its own financial system, in parallel?  By June 2019, Bitcoin had hit $11,300 a coin and seemingly, finally broken out of its long-time slump.
+
+
+Fast forward to 2020 and the spread of COVID-19 and fears about the health of the global financial markets at-large took Bitcoin on a steady climb until October, when the crypto markets began to take off in a big way for a simple reason.
+
+
+Jack Dorsey’s Square Inc. had announced they would be holding 4,709 bitcoins on their corporate balance sheet. It was this and the later announcement that Tesla would be doing the same that thrust the “digital gold” thesis back into the spotlight. Maybe if big companies were confident in bitcoin, it really could be a revolutionary store-of-value, for everyone.
+
+
+By the end of the year, Bitcoin closed over $29,000 a coin, comfortably above the heights of the largely speculatively-driven 2017-bull run. In the words of Square in their Bitcoin Investment Whitepaper, Bitcoin had truly begun to be seen as “an instrument of global economic empowerment,” and a “way for individuals around the world to participate in a global monetary system and secure their own financial future.”
+
+‍
+
+Present Day: Where Bitcoin is Now
+Despite Bitcoin’s shedding of over 50% of its value from earlier in the year, the key case for its value remains the same. Over the past 12 months, it has maintained a 236% return, even adjusted for inflation and even in the face of this spring’s market downturn.
+
+
+Like any asset, Bitcoin tends to experience the most uncertainty in the short-term, but by the numbers, where it has historically shined is on a yearly or multi-year timeline. If there is one key driver for this long-time growth, it’s global macro uncertainty. In case you’re not familiar with that term, just think of all of the events we mentioned above that helped to drive crypto’s leading asset’s growth over time. Each and every one of them represented something that either cast doubt on the traditional financial system, culminating in real, large companies adopting Bitcoin.
+
+
+If you’re interested in how many companies are public Bitcoin “HODLers” now, you can check out the list here.
+
+‍

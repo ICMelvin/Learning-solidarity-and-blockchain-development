@@ -1,0 +1,265 @@
+'''repo to check out:: smartcontractkit/ full-blochain-solidarity-course-js'''
+```This is the current working faucet:: https://cloud.google.com/application/web3/faucet/ethereum/sepolia```
+
+# Blockchain Basics
+
+    * Smart constracts are a set of instructions executed in a decentralized way without the need of centralized 
+    or third-party intermidiary, {it's a decentralized agreement}, etherium blochain brought smart constracts
+    to life.
+
+    ## NB: DEFI means decentralized finance.
+        -Bitcoin was the first protocol to take the blockchain technology.
+        -Etherium  brought about the smart contract
+        -Chainlink is a decentralized oracle that allows Hybrid smart contracts.
+        -Smart contract are Trust Mininmized agreements
+        -Blockchain is being run by multiple nodes and validators
+
+    *Blockchain Oracles are devices that interacts with off-chain world in other to provide external data for 
+    the computaion of smart contracts. why this device came to be was because the Blockchain can't communicate 
+    with the real world which means they don't get real data from the real world because Blockchains are intensionally 
+    walled off, but in order to properly form a smart contract the need external data and computaion
+    this created the oracle problem that the oracle devices solved.
+
+    * Hybrid Smart constracts incorperates decentralized and centralized smart contracts
+    the reason this was created was because the Blockchain still needed its data and computation to stay
+    decentralized even while getting external data and computaion, so that made the decentralized oracle network
+    which is a collection of oracle nodes in order ensure that the data and computaion is not centralized in a 
+    single node.
+
+    * Chainlink protocol is a modular decentralized oracle network that brings in both the eternal data and computaion 
+    for the smart contracts while making sure they are decentralized end to end and still gives us this richness
+    that we need for our agreement. it works on any blochain.
+
+    *Dapp this means decentralized applications or decentralized protocol and stuff that relates to smart contracts,
+    this is the combination of many smart contracts.
+
+# Difference between Web1, Web2, and Web3
+
+    * Web1: This is a permissionless web where you can only read or see information without being able to contribute, 
+    has static content.
+
+    * Web2: this is a permissoned web you can read and contribute to the information or data, has Dynamic content. this is where
+    companies run your agreements on their servers.
+
+    *Web3: This is a permissionless web with Dynamic content, where decentralized censorship run your agreements
+    and codes. here you don't only contribute to the product or data, you also own part of it,
+
+    
+# Smart constracts give rise to Trust Mininmize Agreements, like unbreakable promises, smart contracts are immutable,
+decentralized and Transparent.
+.....Purpose of smart contracts includes
+    * Smart Contracts/Agreements won't be altered or modified
+    * To Enable decentralized Exchanges that is not centrally controlled by anyone.
+    * It is Transparent and immutable
+
+
+# Other BlockChanin Benefits
+    * Many node operators run Blockchains making it decentralized
+    * Transparency and Flexibility 
+    * Speed and Efficiency
+    * Security and Immutability 
+    * To Hack into a blockchain protocol you would have you at least half of the nodes running stuff.
+    * Counter party risk removal ( the absence of centralized intermidiary)
+    * Trust Mininmized Agreements (Smart contracts, and Decentralized hybrid smart contracts)
+
+
+# What has smart contracts done so far
+    * DEFI(decentralized finance)
+    * DAOs (decentralized Autonomous Organizations)
+    * NFTs (Non-fungable tokens)
+
+ 
+# NB to see details about your account..copy and paste your wallet address in thenetwork(testnet).etherscan.io.
+
+# Things to keep in Mind about a transaction
+    * Transaction hash; is a unique identifier that maps a particular transacton event
+    * Status; tells us the state of the transaction; whether it was successful or not
+    * Block;  is a list of transaction mined together
+    * Time-Stamp; shows us when the transaction occured; Date/Time 
+    * From; shows the address it's comming from
+    * To; shows the destination it's being sent to
+    * Value; shows the quantity of amount of stuff being sent and recieved
+    * Transaction fee; this is the fee paid to the node or validator that runs the blockchain
+    * Gas Price; Gas itself is a unit of computational measurement, the more complex your transaction is the more
+    you have to pay.
+    * To get the transaction fee, you multiply the gas usage by the Gas price 
+
+
+# How blockchain actually works
+    ** A hash; is a unique fixed length string that identifies a peice of data {eg of hash algorithm includes(SHA256)}, to 
+    create a hash, a peice of data is put into a hash function. ethereum uses (keccak-256 hash algorithm), the length of a 
+    hash string length is constant no matter how long big or small the data is. 
+
+    ** {Went to a site called blockchain demo to discover the Difference btm hash, block, blockchain, distributed
+    tokens, and coinbase}
+
+    * Hash; had a fixed strict string length no matter how large the data is.
+   
+    * Block; also hashes data with a fixed string length but it a unique set of numbers called (nonce) 
+    that is used to mine each data with a given block number. a nonce is used by miners to solved a mathimatical
+    computational problem in a blockchain, thus when they are mining they are looking for a particular nonce that 
+    solved the computational problem they have or are given. the core Difference btm a Hash and a block is that a hash
+    just hashes its given data but a block hashes with three Things(block no., nonce, and data)
+   
+    * Blockchain; is a collection of blocks but something is added to each block called (previous), this contains
+    the hash of the previous block before that particular block. the first block in a blockchain is called the
+    (Genesis block) and the previous hash it holds is non exsitent. thus this hashes data like a block but it now 
+    also includes the hash from the previous block when hashing and if the previous block is altered the current
+    and the ones after would be affected as well, this is what makes blockchains immutable.
+
+    * Distributed(decentralized); distributes the same blockchain data and hash in peers that way each has a copy of
+    the other peer block chain data and when a single blockchain decides to alter it's data, it would no longer 
+    match that of the other peers hence invalid. in other words the list of transactions in a blockchain 
+    is distributed in different inter-connected instances.
+
+    * Tokens; 
+
+ ## Things to keep in mind about blockchains
+    * Hash is a unique fixed length string that identifies a piece of data.
+    * Hash algorithm/function is a function that computes data in to a unique hash
+    * Minig is the process of finding the solution to a blockchain problem. thus nodes get paid for minig blocks 
+    * Block is a list of transactions mined together, in a block chain a block consists of the nonce, block no.
+    previous hash from the predecessory block and the current hash.
+    * Blockchains are decentralized, this means it has no single point of authority.
+    * Nonce is a number used once to find the solution to a blockchain problem. hence the name nonce(number once).
+    a nonce can also be used to define the transaction number of an account/ address
+    *
+
+# Signing transactions
+
+  ## A private key is only known by the holder and it's used to sign transactions.  the public key is the one 
+  that everyone sees, it ususally used to verify that the transaction or data was signed by your private, thus 
+  private and public keys comes in a pair. in a nutshell, a private key is to sign trasactions, while the public
+  key is used to very the signature, when you sign a transaction with your private key, you are then given a corresponding 
+  hash called a massage signature, thus in order to verify a transaction you need a public key and the massage signature
+  that was obtained during the signing of that transaction.
+NB: your mnemonic key(seed phrase) + your account number of address gives you your private key.
+    To create an address in the ethereum blockchain, you take the public key derived from the private key and 
+    then hash it with the keccak256 hashing algorithm and then take the last 20 bytes.
+
+## Things to keep in mind about signing transactions
+    * Public key; is derived from your private key by using a digital signature algorithm. and it's public
+    * Signing a transaction; is a one way process that takes your private key and hashing it with your trasaction
+    data, this then gives a massage signature.
+    * Node is a single instance of a Decentralized network(e.g peer A, peer B, etc..)
+    
+# High Level Blockchain fundamentals
+    * Blockchain is a decentralized database
+    * Consensus is a mechanism used to agree on the state of a blockchain
+    * Sybil Resistance is a way for a block to stop users from making fake ananymous blockchains 
+    to influence a network
+    * Layer 1 is the base layer blockchain solutions 
+    * Layer 2 is any application built ontop of layer 1 e.g(Chainlink, {arbitron and optmizim} => Rollups)
+
+## Things to keep in mind concerning high level blockchain fundamentals
+    * ETH & BTC are blockchains that uses proof of work(PoW), they follow nakamoto Consensus
+    * ETH 2.0 uses proof of stake (PoS)
+    * The bigger the blockchain the more secure it is.
+    * Sharding and Rollups are the solutions to scalability issues in a blockchain 
+    * Only so many transactios can fit into a block, the is the scalability problem that sharding solved.
+    * Blockchain nodes keeps a list of transactions that occur {this way when the transaction is compared and if
+    there is a node out of sync that node is deemed to be acting malicously and possibly punished or kicked out}
+    * Consensus is the machanism used to agree on the state of a blockchain, this is brokedown into two which are
+
+     ** Chain selection algorithm{
+        - uses Consensus (which is the combination of the longest chain rule and proof of work {nakamoto Consensus})
+     }
+     ** Sybil resistance machanism{
+        - Proof of work algorithm [PoW] {defines the author of the block that the other nodes should verify}
+        - Proof of Stake [PoS] {}
+     } 
+
+    * proof of work [PoW] defines the author of the node that other nodes should verify, but PoW uses a lot of 
+    energy.
+    * proof of stake [PoS] are nodes that put up collateral as a sybil resistance machanism. with this collateral
+    that chain promises to behave honestly if they go against the agreement they are going to be slashed of their stake.
+    in PoS miners are now called validators unlike like PoW where miners race to solve the problems and clain the
+    rewards, the validators are just there to validate the transaction/nodes.
+
+    * In prove of stake nodes are randomly chosen to propose the new block and it's the job of the validators to 
+    validate if the node has proposed the block honestly.
+
+    * Sharded-blockchain is a blockchain that houses other blockhain
+    * Rollups are layer 2 blochains that rollup their transactions into layer 1 e.g [arbitron and optimism]
+    * A scalability problem in a blockchain is that a block can only hold a certain amount of transaction at a 
+    given time which leads to very high gas prices.
+    * Gas price is how much it costs to run a execution a blockchain.
+
+    
+==# Lession 2, coding stuff, [go to github for more info smartcontractkit]
+    NB: every single smart contract has an address 
+
+# this are basic things to setup
+
+    # Hardhat — the most popular Solidity dev framework (JS-based, great since you know JS)
+    npm install --save-dev hardhat
+
+    # ethers.js — interact with contracts from JS
+    npm install ethers
+
+    # OpenZeppelin Contracts — secure, audited contract templates
+    npm install @openzeppelin/contracts
+
+    # VS Code Extensions
+
+    Solidity by Nomic Foundation
+    Hardhat for Visual Studio Code by Nomic Foundation
+    Solidity Visual Developer by tintinweb
+    ESLint
+    Prettier - Code Formatter
+    DotENV
+
+    #To start and initialize the project
+
+    npm init -y
+    npm install --save-dev hardhat
+    npx hardhat --init
+
+  ## debugg and compile == NB all hardhat command should be run in the JSinDC/contract dir
+
+    * Compile
+    npx hardhat compile
+
+    * Test
+    npx hardhat test
+
+    * Run a Local Blockchain Node
+    npx hardhat node
+    This spins up a local Ethereum network on your machine.
+
+    * Deploy to Local Network
+    npx hardhat run scripts/deploy.js --network localhost
+
+    ----Or
+
+    *npx hardhat ignition deploy ignition/modules/Lock.js --network localhost
+
+    * To clear cache 
+    rm -rf ignition/deployments
+
+    # since the hardhat for compiling this stuff needs node version 22 we would use nvm to switch
+    * nvm use 22    # for Hardhat / blockchain work
+    * nvm use 25    # for whatever needs the latest Node
+
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# Keywords in solidity 
+
+    * Boolean {true or false}
+    * uint is an unsigned integer and its positive, you can specify how many bit you want to allocate to uint
+    e.g {uint10}
+    * int is a positive or nagative integer
+    * address is the tipical address value
+    * strings are characters enclosed in qoutes
+    * bytes also store string but with a given storage capacity
+
+# functions and methods
+    functons or methods executes a specific subset of code when called
+
+  ## Function visibility specifiers
+    - public: is visible externally and internally (creates a getter function for 
+    storage/state variables)
+    - private: only visible in the current contract
+    - external: is only visible externally (only for functions) - i.e. can only be massage 
+    called (via this.func)     
+    -internal: only visible internally 
