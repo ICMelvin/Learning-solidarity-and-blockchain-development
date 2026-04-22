@@ -5,8 +5,35 @@ pragma solidity ^0.8.28;
     // to start a smart contract we use the contraction keyword
 
 contract SimpStore {
-    uint256 public MyNum;
-    function storing(uint256 stores)  public {
+    uint256 MyNum;
+    //assigning values to the struct function
+    humans public Mem = humans({age : 23, name : "Melvin"}); // we can use arrays to make stuff dynamic 
+
+    function store(uint256 stores)  public {
        MyNum = stores;
+        uint256 myScope = 78 ; // the scope this variable is limited to this function.
+       
     }
+    // implementation of struct
+    struct humans {
+        string name;
+        uint256 age;
+        
+    }
+
+    function Retrieval() public view returns (uint256) {
+        return MyNum;
+        
+    }
+    // Declaration of a dynamic array
+
+    humans[] public stud;
+
+    // array DS pushing function
+
+    function addStudent(string memory name, uint256 age) public{
+        stud.push(humans(name, age));
+    }
+
+
 }
