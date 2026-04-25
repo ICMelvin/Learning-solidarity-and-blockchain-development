@@ -13,9 +13,10 @@
         -Chainlink is a decentralized oracle that allows Hybrid smart contracts.
         -Smart contract are Trust Mininmized agreements
         -Blockchain is being run by multiple nodes and validators
+        -EVM means Ethereum Virtual Machine.
 
     *Blockchain Oracles are devices that interacts with off-chain world in other to provide external data for 
-    the computaion of smart contracts. why this device came to be was because the Blockchain can't communicate 
+    the computaion for smart contracts. why this device came to be was because the Blockchain can't communicate 
     with the real world which means they don't get real data from the real world because Blockchains are intensionally 
     walled off, but in order to properly form a smart contract the need external data and computaion
     this created the oracle problem that the oracle devices solved.
@@ -133,7 +134,7 @@ decentralized and Transparent.
   key is used to very the signature, when you sign a transaction with your private key, you are then given a corresponding 
   hash called a massage signature, thus in order to verify a transaction you need a public key and the massage signature
   that was obtained during the signing of that transaction.
-NB: your mnemonic key(seed phrase) + your account number of address gives you your private key.
+NB: your mnemonic key(seed phrase) + your account number or address gives you your private key.
     To create an address in the ethereum blockchain, you take the public key derived from the private key and 
     then hash it with the keccak256 hashing algorithm and then take the last 20 bytes.
 
@@ -241,6 +242,7 @@ NB: your mnemonic key(seed phrase) + your account number of address gives you yo
     * nvm use 22    # for Hardhat / blockchain work
     * nvm use 25    # for whatever needs the latest Node
 
+    ## download solidity (wake) in order to get off easy
     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # Keywords in solidity 
@@ -255,11 +257,61 @@ NB: your mnemonic key(seed phrase) + your account number of address gives you yo
 
 # functions and methods
     functons or methods executes a specific subset of code when called
+    - View and Pure functions when called alone don't spend Gas cause only read the data, and they don't allow the modification of the variable state, furthermore the pure func 
+    don't allow you to read from the blockchain state but view does. thats why we don't spend gas when they are used because the don't perform computaional activities, 
+    that in-tern requires Gas.the only time it costs gas is when you call it inside a function that performs a computational activity or data modification.
+
 
   ## Function visibility specifiers
     - public: is visible externally and internally (creates a getter function for 
     storage/state variables)
     - private: only visible in the current contract
-    - external: is only visible externally (only for functions) - i.e. can only be massage 
-    called (via this.func)     
+    - external: is only visible externally (only for functions) - i.e. can only be massage called (via this.func)     
     -internal: only visible internally 
+
+ ## Scope of variables {tells us who or what function can access a certain variable}
+   * when a variable is declared inside a given function, the scope of that variable is limited to that particular function, thus it can't be accessed outside that function.
+
+# Basic Solidity array and structs
+
+    - Struct in Solidity is like objects in javascript, it stores related data e.g(name, age, level etc)
+    - Array is a data structure that holds a list of other types.
+
+# Basic Solidity errors and warnings
+
+    - Red means error, thus your code won't compile
+    - yellow means warnings, tho warnings don't stop your code from compiling but it's good pratice to check them out 
+
+# Basic solidity memory, storage and calldata (intro)
+-- There are 6 places data can be stored in solidy {memory locations}; they include:
+
+    * Stack 
+    * Memory {is a memory location that temporaly variables that can be modified} exists within a function
+    * Storage {are storage locations Don't exitst with a function, and are permanent variables that can be modified }
+    * calldata {is a storage location that temporal variables that can't be modified} also exits within a function
+    * Code       
+    * logs
+
+# Mapping 
+-- Mapping is a data structre where a key is mapped to a single value.
+    ## eg.{with function and an array}
+    mapping (string => uint256) public mappingstuff;
+    humans[] public stud;
+
+    function toAdd&Map(string memory name, uint256 age) Public{
+        stud.push(humans(name, age));
+        mappingstuff[name] = age;
+    }
+
+it is possible to deploy a contract within a contract on remix
+NB: Composability is the ability of a contract to interact with other contracts, to make that happen we use import function
+    ABI means application binary Interface
+    inorder to interract with a contract we need an address and an ABI
+# Iheritance 
+    -Iheritanceis the when a contract or a function inherites the properties of other contracts or functions
+    - The (is) Keyword is used to make a contract or function inherit other function/ contract properties e.g {simpstore is extraStore}
+    - Virtual is a Keyword used to make the inherited function overridable.
+    - Override is a Keyword passed to the function within a contract that inherited stuff from the contract you intend to expire.  
+
+# Creating payable transactions 
+    payable is the keyword used to make a function in solidity a payable transaction in any local blockchain... which basically means it makes it able to a hold a Token.

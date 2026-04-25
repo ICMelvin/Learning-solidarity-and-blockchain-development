@@ -1,0 +1,23 @@
+{
+  "contracts/storageFac.sol": {
+    "./SimpStore.sol": "contracts/SimpStore.sol",
+    "__sources__": {
+      "contracts/storageFac.sol": {
+        "content": "//SPDX-license-identifier : MIT\npragma solidity ^0.8.28;\n\n// we use the import function to give this contract accces to the other contract for composability, thereby importing other contracts into this one\nimport \"./SimpStore.sol\";\ncontract factory {\n// below is how to make a contract interact or deploy other contract{ composability}, i also made it a dynamic array so that it can keep a list of all contracts we call\nSimpStore[] public callSimpStoreAr;\n    function callSimp() public {\n      SimpStore callSimpStore = new SimpStore(); // the new keyword is used to call a the smart contract we want to interact with\n      callSimpStoreAr.push(callSimpStore); // pushing to the array\n    }\n\n  function sfStore(uint256 simpIndex, uint256 simpNumber) public {\n    SimpStore simpstore = callSimpStoreAr[simpIndex];\n    simpstore.store(simpNumber);\n  }\n  function sfRetrieve (uint256 simpIndex) public view returns(uint256){\n    return callSimpStoreAr[simpIndex].Retrieval();\n  }\n}",
+        "file": "contracts/storageFac.sol"
+      },
+      "contracts/SimpStore.sol": {
+        "content": "// SPDX-License-Identifier: SEE LICENSE IN LICENSE\n    // first this is to declare the version of solidity to be used and (^) is to allow newer versions \npragma solidity ^0.8.28;\n\n    // to start a smart contract we use the contraction keyword\n\ncontract SimpStore {\n    uint256 MyNum;\n    //assigning values to the struct function\n    humans public Mem = humans({age : 23, name : \"Melvin\"}); // we can use arrays to make stuff dynamic \n    // storage function\n    function store(uint256 stores)  public {\n       MyNum = stores;\n       // uint256 myScope = 78 ; // the scope this variable is limited to this function.\n       \n    }\n    // implementation of struct\n    struct humans {\n        string name;\n        uint256 age;\n        \n    }\n    // read to return value function with the view function\n    function Retrieval() public view returns (uint256) {\n        return MyNum;\n        \n    }\n    \n    // Declaration of a dynamic array\n\n    humans[] public stud;\n\n    // array DS pushing function\n\n    function addStudent(string memory name, uint256 age) public{\n        stud.push(humans(name, age));\n        mapNametoNum[name] = age; // mapping a name to the age inside this function.\n    }\n// # calldata, memory and storage\n// struct, mapping and array demands that memory or calldata be specified when declaring a string as a parameter.\n\n// mapping a key to a value function initialization\nmapping (string => uint) public mapNametoNum;\n    \n}\n",
+        "file": "contracts/SimpStore.sol"
+      }
+    }
+  },
+  "contracts/Fund.sol": {
+    "__sources__": {
+      "contracts/Fund.sol": {
+        "content": "// SPDX-License-Identifier: SEE LICENSE IN LICENSE\npragma solidity ^0.8.28;\n\ncontract Fund {\n\n}",
+        "file": "contracts/Fund.sol"
+      }
+    }
+  }
+}
