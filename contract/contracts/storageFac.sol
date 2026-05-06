@@ -2,6 +2,7 @@
 pragma solidity ^0.8.28;
 
 // we use the import function to give this contract accces to the other contract for composability, thereby importing other contracts into this one
+  // you can also contracts directly from github
 import "./SimpStore.sol";
 contract factory {
 // below is how to make a contract interact or deploy other contract{ composability}, i also made it a dynamic array so that it can keep a list of all contracts we call

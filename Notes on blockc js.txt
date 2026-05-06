@@ -4,7 +4,7 @@
 # Blockchain Basics
 
     * Smart constracts are a set of instructions executed in a decentralized way without the need of centralized 
-    or third-party intermidiary, {it's a decentralized agreement}, etherium blochain brought smart constracts
+    or third-party intermidiary, {it's a decentralized agreement}, etherium blochain brought smart contracts
     to life.
 
     ## NB: DEFI means decentralized finance.
@@ -17,17 +17,17 @@
 
     *Blockchain Oracles are devices that interacts with off-chain world in other to provide external data for 
     the computaion for smart contracts. why this device came to be was because the Blockchain can't communicate 
-    with the real world which means they don't get real data from the real world because Blockchains are intensionally 
+    with the real world which means they deterministic systems they don't get real data from the real world because Blockchains are intensionally 
     walled off, but in order to properly form a smart contract the need external data and computaion
     this created the oracle problem that the oracle devices solved.
 
     * Hybrid Smart constracts incorperates decentralized and centralized smart contracts
     the reason this was created was because the Blockchain still needed its data and computation to stay
-    decentralized even while getting external data and computaion, so that made the decentralized oracle network
+    decentralized even while getting external data and computaion, so that made the decentralized oracle network like chainlink
     which is a collection of oracle nodes in order ensure that the data and computaion is not centralized in a 
     single node.
 
-    * Chainlink protocol is a modular decentralized oracle network that brings in both the eternal data and computaion 
+    * Chainlink protocol is a modular decentralized oracle network that brings in both the eternal data and computaion  needed
     for the smart contracts while making sure they are decentralized end to end and still gives us this richness
     that we need for our agreement. it works on any blochain.
 
@@ -46,10 +46,9 @@
     and codes. here you don't only contribute to the product or data, you also own part of it,
 
     
-# Smart constracts give rise to Trust Mininmize Agreements, like unbreakable promises, smart contracts are immutable,
-decentralized and Transparent.
+# Smart contracts give rise to Trust Mininmize Agreements, like unbreakable promises, smart contracts are immutable, decentralized and Transparent.
 .....Purpose of smart contracts includes
-    * Smart Contracts/Agreements won't be altered or modified
+    * Smart Contracts/Agreements can't be altered or modified
     * To Enable decentralized Exchanges that is not centrally controlled by anyone.
     * It is Transparent and immutable
 
@@ -59,7 +58,7 @@ decentralized and Transparent.
     * Transparency and Flexibility 
     * Speed and Efficiency
     * Security and Immutability 
-    * To Hack into a blockchain protocol you would have you at least half of the nodes running stuff.
+    * To Hack into a blockchain protocol you would have to gain control of at least half of all the nodes running stuff.
     * Counter party risk removal ( the absence of centralized intermidiary)
     * Trust Mininmized Agreements (Smart contracts, and Decentralized hybrid smart contracts)
 
@@ -73,14 +72,14 @@ decentralized and Transparent.
 # NB to see details about your account..copy and paste your wallet address in thenetwork(testnet).etherscan.io.
 
 # Things to keep in Mind about a transaction
-    * Transaction hash; is a unique identifier that maps a particular transacton event
+    * Transaction hash; is a unique string identifier that maps a particular transacton event
     * Status; tells us the state of the transaction; whether it was successful or not
     * Block;  is a list of transaction mined together
     * Time-Stamp; shows us when the transaction occured; Date/Time 
     * From; shows the address it's comming from
     * To; shows the destination it's being sent to
     * Value; shows the quantity of amount of stuff being sent and recieved
-    * Transaction fee; this is the fee paid to the node or validator that runs the blockchain
+    * Transaction fee; this is the fee paid to the node or validator that runs the blockchain 
     * Gas Price; Gas itself is a unit of computational measurement, the more complex your transaction is the more
     you have to pay.
     * To get the transaction fee, you multiply the gas usage by the Gas price 
@@ -89,14 +88,14 @@ decentralized and Transparent.
 # How blockchain actually works
     ** A hash; is a unique fixed length string that identifies a peice of data {eg of hash algorithm includes(SHA256)}, to 
     create a hash, a peice of data is put into a hash function. ethereum uses (keccak-256 hash algorithm), the length of a 
-    hash string length is constant no matter how long big or small the data is. 
+    hash string length is constant no matter how big or small the data is. 
 
     ** {Went to a site called blockchain demo to discover the Difference btm hash, block, blockchain, distributed
     tokens, and coinbase}
 
     * Hash; had a fixed strict string length no matter how large the data is.
    
-    * Block; also hashes data with a fixed string length but it a unique set of numbers called (nonce) 
+    * Block; also hashes data with a fixed string length but it has a unique number called (nonce) 
     that is used to mine each data with a given block number. a nonce is used by miners to solved a mathimatical
     computational problem in a blockchain, thus when they are mining they are looking for a particular nonce that 
     solved the computational problem they have or are given. the core Difference btm a Hash and a block is that a hash
@@ -108,7 +107,7 @@ decentralized and Transparent.
     also includes the hash from the previous block when hashing and if the previous block is altered the current
     and the ones after would be affected as well, this is what makes blockchains immutable.
 
-    * Distributed(decentralized); distributes the same blockchain data and hash in peers that way each has a copy of
+    * Distributed(decentralized); distributes the same blockchain data and hash in peers/nodes that way each has a copy of
     the other peer block chain data and when a single blockchain decides to alter it's data, it would no longer 
     match that of the other peers hence invalid. in other words the list of transactions in a blockchain 
     is distributed in different inter-connected instances.
@@ -120,7 +119,7 @@ decentralized and Transparent.
     * Hash algorithm/function is a function that computes data in to a unique hash
     * Minig is the process of finding the solution to a blockchain problem. thus nodes get paid for minig blocks 
     * Block is a list of transactions mined together, in a block chain a block consists of the nonce, block no.
-    previous hash from the predecessory block and the current hash.
+    previous hash from the predecessory block and the current hash, and the transaction/data being hashed.
     * Blockchains are decentralized, this means it has no single point of authority.
     * Nonce is a number used once to find the solution to a blockchain problem. hence the name nonce(number once).
     a nonce can also be used to define the transaction number of an account/ address
@@ -131,7 +130,7 @@ decentralized and Transparent.
   ## A private key is only known by the holder and it's used to sign transactions.  the public key is the one 
   that everyone sees, it ususally used to verify that the transaction or data was signed by your private, thus 
   private and public keys comes in a pair. in a nutshell, a private key is to sign trasactions, while the public
-  key is used to very the signature, when you sign a transaction with your private key, you are then given a corresponding 
+  key is used to verify the signature, when you sign a transaction with your private key, you are then given a corresponding 
   hash called a massage signature, thus in order to verify a transaction you need a public key and the massage signature
   that was obtained during the signing of that transaction.
 NB: your mnemonic key(seed phrase) + your account number or address gives you your private key.
@@ -150,7 +149,7 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
     * Sybil Resistance is a way for a block to stop users from making fake ananymous blockchains 
     to influence a network
     * Layer 1 is the base layer blockchain solutions 
-    * Layer 2 is any application built ontop of layer 1 e.g(Chainlink, {arbitron and optmizim} => Rollups)
+    * Layer 2 is any application built ontop of layer 1 blockchain that also benefits from the layer tight Security e.g(Chainlink, {arbitron and optmizim} => Rollups)
 
 ## Things to keep in mind concerning high level blockchain fundamentals
     * ETH & BTC are blockchains that uses proof of work(PoW), they follow nakamoto Consensus
@@ -166,18 +165,16 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
         - uses Consensus (which is the combination of the longest chain rule and proof of work {nakamoto Consensus})
      }
      ** Sybil resistance machanism{
-        - Proof of work algorithm [PoW] {defines the author of the block that the other nodes should verify}
-        - Proof of Stake [PoS] {}
+        - Proof of work algorithm [PoW] {relies on computaional power}
+        - Proof of Stake [PoS] {relies on owed capital}
      } 
 
-    * proof of work [PoW] defines the author of the node that other nodes should verify, but PoW uses a lot of 
-    energy.
-    * proof of stake [PoS] are nodes that put up collateral as a sybil resistance machanism. with this collateral
-    that chain promises to behave honestly if they go against the agreement they are going to be slashed of their stake.
-    in PoS miners are now called validators unlike like PoW where miners race to solve the problems and clain the
-    rewards, the validators are just there to validate the transaction/nodes.
+    * proof of work [PoW] here miners race to solve the computaional problem while using high computaional hardwares, the first to solve the problem earns the reward.
 
-    * In prove of stake nodes are randomly chosen to propose the new block and it's the job of the validators to 
+    * proof of stake [PoS] here validators are chosen based on the number of coins they hold and are willingly to stake, and when they act dishonestly they are slashed
+    of the coins they staked as collateral.
+
+    * In prove of stake nodes are randomly chosen as authors to propose the new block and it's the job of the validators to 
     validate if the node has proposed the block honestly.
 
     * Sharded-blockchain is a blockchain that houses other blockhain
@@ -311,7 +308,95 @@ NB: Composability is the ability of a contract to interact with other contracts,
     -Iheritanceis the when a contract or a function inherites the properties of other contracts or functions
     - The (is) Keyword is used to make a contract or function inherit other function/ contract properties e.g {simpstore is extraStore}
     - Virtual is a Keyword used to make the inherited function overridable.
-    - Override is a Keyword passed to the function within a contract that inherited stuff from the contract you intend to expire.  
+    - Override is a Keyword passed to the function within a contract that inherited stuff from the contract you intend to Override.  
+    - Bear in mind that when you import a contract, the ABI(functions) of that contract are  being declared as types in the contract that inherited it.
 
 # Creating payable transactions 
-    payable is the keyword used to make a function in solidity a payable transaction in any local blockchain... which basically means it makes it able to a hold a Token.
+   - payable is the keyword used to make a function in solidity a payable transaction in any local blockchain... which basically means it makes it able to a hold a Token.
+   - msg.value is a keyword used to get the value that is being sent or recieved.
+   - require() is used to set the range of value that is accepted, and it reverts what it has executed when a certain condition is not met.
+   - this is how to convert Eth to wei {1e18 =( 1 * 10 ** 18)}
+   - revert in a smart contract means undoing what it's has done before and then return the gas.
+   - Chainlink data feed is what we use to convert of check the realtime dollor rate of an Eth.
+
+        ## Chainlink SDK --sort of
+        - chainlink data feeds provides us with real of chain data and computaional information while making it decentralized
+        - chainlink vrf is a way to get proofably random numbers for our smart contract from the real world
+        - chainlink keepers are a way to do decentralized event driven computaion
+
+    ##-- NB {
+        msg.sender is the address of the person calling the function/contract
+        msg.value is the amount of wei being sent to perform the computation
+    }
+
+    ## NB: Interface gives us a minimalistic ABI to interract contracts outside our project
+
+# Libraries
+--Libraries are similiar to contracts, but you can't declare a state variable or send ether. a Library is embedded into the contract if all Library function are internal 
+otherwise the library must be deployed and then linked before deploying the contract.
+
+    - Libraries are created in same way smart contracts are created, just replace the "contract" with "library".
+    - Libraries must be made internal instead of public.
+    
+# SafeMath, overflow checking and unchecked keyword
+    - unchecked means that when a a number passes a set upper limit of a number it just reverts back to zero ( this was valid in version 0.6.0 )
+    - When you use the unchecked keyword is used to make sure the set number reverts to 0 is it exceeds it's upper limit.
+    - checked is the set number that shouldn't be exceeded.
+
+# Basic solidity loop
+     - for loop is a way to iterate the a set of objects.
+
+  ## reseting an array
+    stuff = new address[](0)
+
+  ## Ways to send eth in a contract
+    - Call [returns a boolean and a bytes]
+    (boolean callSuccess, bytes memory callDate) = payable(msg.sender.call{value: address(this.balance)}(""))
+    require(callSuccess, "transaction failed")
+    payable(msg.sender).call(address(this).balance)
+
+    - tranfer 
+    payable(msg.sender).transfer(address(this).balance)
+
+    - Send [returns a boolean]
+  boolean callSuccess  =  payable(msg.sender).send(address(this).balance)
+  require(callSuccess, "transaction failed")
+
+  ## Constructor
+   - constructor is a function that is immidiately called when the transaction is deployed, it priority, a constructor is a priority function.
+
+   address public owner;
+   constructor(){
+    owner = msg.sender;
+   }
+
+   ## Modifiers
+   - when a Modifier is created it acts as a keyword to a function during it's declaration, thus modifying the functionality of that function.
+   - to create a Modifier, its same way to create a function but instead of function we use Modifier instead
+   - the underscore(_;)  tells the compiler to do the rest of the code after or before it has executed the logic or task the modifier was made for.
+
+# Advanced Solidity concept
+  ## constant and immutable keyword (improving gas efficiency)
+    - these are keywords that ensure that your variables can be changed or modified.
+    - when declaring a constant variable, it is professional the name it in uppercase 
+    - These keywords are used to make a contract more gas efficient, they help save gas.
+
+  ## Custom errors
+    - you can create a custon error outside the contract and use if statements instead of reqiure, (this is more gas efficient)
+     e.g {
+        error insufficientFund() // outside the constracts, at the very top.
+        if(acctBalance == 0){
+            revert insufficientFund() // using if statements instead of require
+        }
+     }    
+
+  ## Recieve and FallBack { recieve() and fallback() }
+    - These are special functions
+    - recieve() can't send a transaction with data but fallback() can.
+    - recieve() and fallback() are declared inside same contract, thus when recieve() fails to send a transaction it's automatically refered to fallback()
+  
+
+# Ethers.Js 
+- this is a javascript based library for working with smart contracts. 
+
+# Asynchronous Programming in javascript
