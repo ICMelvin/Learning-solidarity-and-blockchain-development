@@ -1,5 +1,6 @@
 {
     "wake.compiler.solc.remappings": [
+        "@nomicfoundation/=node_modules/@nomicfoundation/",
         "hardhat/=node_modules/hardhat/"
     ]
 }

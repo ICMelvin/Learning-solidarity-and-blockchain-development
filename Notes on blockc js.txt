@@ -305,7 +305,7 @@ NB: Composability is the ability of a contract to interact with other contracts,
     ABI means application binary Interface
     inorder to interract with a contract we need an address and an ABI
 # Iheritance 
-    -Iheritanceis the when a contract or a function inherites the properties of other contracts or functions
+    -Iheritance is when a contract or a function inherites the properties of other contracts or functions
     - The (is) Keyword is used to make a contract or function inherit other function/ contract properties e.g {simpstore is extraStore}
     - Virtual is a Keyword used to make the inherited function overridable.
     - Override is a Keyword passed to the function within a contract that inherited stuff from the contract you intend to Override.  
@@ -317,7 +317,7 @@ NB: Composability is the ability of a contract to interact with other contracts,
    - require() is used to set the range of value that is accepted, and it reverts what it has executed when a certain condition is not met.
    - this is how to convert Eth to wei {1e18 =( 1 * 10 ** 18)}
    - revert in a smart contract means undoing what it's has done before and then return the gas.
-   - Chainlink data feed is what we use to convert of check the realtime dollor rate of an Eth.
+   - Chainlink data feed Interface is what we use to convert of check the realtime dollor rate of an Eth.
 
         ## Chainlink SDK --sort of
         - chainlink data feeds provides us with real of chain data and computaional information while making it decentralized
@@ -340,7 +340,7 @@ otherwise the library must be deployed and then linked before deploying the cont
     
 # SafeMath, overflow checking and unchecked keyword
     - unchecked means that when a a number passes a set upper limit of a number it just reverts back to zero ( this was valid in version 0.6.0 )
-    - When you use the unchecked keyword is used to make sure the set number reverts to 0 is it exceeds it's upper limit.
+    - The unchecked keyword is used to make sure the set number reverts to 0 is it exceeds it's upper limit.
     - checked is the set number that shouldn't be exceeded.
 
 # Basic solidity loop
@@ -390,13 +390,56 @@ otherwise the library must be deployed and then linked before deploying the cont
         }
      }    
 
-  ## Recieve and FallBack { recieve() and fallback() }
+  ## Recieve and FallBack { recieve() and fallback() } // Sends trasactions without calling a function
     - These are special functions
     - recieve() can't send a transaction with data but fallback() can.
     - recieve() and fallback() are declared inside same contract, thus when recieve() fails to send a transaction it's automatically refered to fallback()
   
 
 # Ethers.Js 
-- this is a javascript based library for working with smart contracts. 
+- this is a javascript based library for interracting with smart contracts. 
 
 # Asynchronous Programming in javascript
+
+- Synchronous programs are programs that its code goes line by line, one after another, one task has to finish before the other begins
+    -> Synchronous programs returns something called a promise, e.g {pending, fulfilled, rejected}, a promise is the status of the task being executed, Promise is a javascript method by the way.
+
+- Asynchronous programs however executes other blocks or tasks while waiting for the first or already executing task to finish
+    -> To make a function Asynchronous we add "async" before writing the function keyword for a particular function, and with an async function you can access the keyword "await" with tells the code to wait for that 
+    line of code to complete execution before proceeding to the next.
+
+# Installation process with yarn/ corepack
+
+    - corepack enable or npm i -g corepack
+    - {verify} yarn --version
+    - {add solc} yarn add solc
+    - {add solidity version to configuration} yarn add solc@0.8.28
+    - {to install globally} yarn add global solc@0.8.28-fixed 
+    - {to compile} yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o . SimpStore.sol
+    - {to shorten the command we have to run everytime we want to compile the contract}we add stuff to the package.json
+        "scripts":{
+            "complile": "yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o . SimpStore.sol"
+        }
+        // with this we can just run yarn compile to compile our contract
+
+# Ganache & Network
+ // NB: RPC stands for remote preceedure call
+    - Ganache is a software that allows you to run a Virtual blochain
+    - Network is where the contract is deployed to
+
+# Ethers.js (entry)
+ // ethers.js is one of the javascript based SDK for interracting with a blochain
+    - {to install ethers SDK} yarn add ethers
+    - {to import ethers use} const ethers = require("ethers")
+    - {in order to read the file that contains the, ABI, and bin} we use fs, to import it, we do; const fs = require("fs-extra"), and then const abi = fs.readFileSync();
+    - the an await keyword is removed from a syntax that calls the deploy() method, it only returns a promise instead of waiting for the transaction to finish
+
+ ## Adding transaction Override
+    - {apperently you can add an Override to the deploy function by adding {} inside it's parenthesis and specifying the Override} e.g  contractFactory.deploy({gasPrice : 100000000000})
+
+ ## Transaction reciepts
+    - this is the wait for block confirmation of a transaction. thus transaction reciept is what you get when you wait for a block confirmation of a deployment transaction
+    - however the deployment transaction is the transaction response, this is what you get when you create a transaction.
+
+ ## Sending raw transactions in ethersjs
+    - `` this info is available as a comment in the code inside the asy.js file ``
