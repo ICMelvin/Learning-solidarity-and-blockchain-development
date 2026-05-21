@@ -405,7 +405,7 @@ otherwise the library must be deployed and then linked before deploying the cont
     -> Synchronous programs returns something called a promise, e.g {pending, fulfilled, rejected}, a promise is the status of the task being executed, Promise is a javascript method by the way.
 
 - Asynchronous programs however executes other blocks or tasks while waiting for the first or already executing task to finish
-    -> To make a function Asynchronous we add "async" before writing the function keyword for a particular function, and with an async function you can access the keyword "await" with tells the code to wait for that 
+    -> To make a function Asynchronous we add "async" before writing the function keyword for a particular function, and with an async function you can access the keyword "await" with tells the program to wait for that 
     line of code to complete execution before proceeding to the next.
 
 # Installation process with yarn/ corepack
@@ -431,7 +431,7 @@ otherwise the library must be deployed and then linked before deploying the cont
  // ethers.js is one of the javascript based SDK for interracting with a blochain
     - {to install ethers SDK} yarn add ethers
     - {to import ethers use} const ethers = require("ethers")
-    - {in order to read the file that contains the, ABI, and bin} we use fs, to import it, we do; const fs = require("fs-extra"), and then const abi = fs.readFileSync();
+    - {in order to read the file that contains the, ABI, and bin} we use fs, to import it, we do; const fs = require("fs-extra"), and then const abi = fs.readFileSync(the abi source);
     - the an await keyword is removed from a syntax that calls the deploy() method, it only returns a promise instead of waiting for the transaction to finish
 
  ## Adding transaction Override
@@ -443,3 +443,33 @@ otherwise the library must be deployed and then linked before deploying the cont
 
  ## Sending raw transactions in ethersjs
     - `` this info is available as a comment in the code inside the asy.js file ``
+
+ ## interracting with contracts in ethersjs
+    - `` this info is in the code
+
+ ## Environment variables (.env)
+    - Environment files is where you store sensitive information and the environmental variables are the sensitive information, e.g {private key and the rest of it}
+    - {to create an Environment file we use} .env 
+    - Environment files/ variables are in our scripting Environment, like terminal
+    - {the dotenv package allows you to access your environmental file/variables} yarn add dotenv. you can make it global if you want
+    - {then import it } require("dotenv").config()
+    - { to use it where you want it to be, you do} process.env.THE_NAME_OF_THE_VARIABLE
+    - {when pushing code to the github repo we stand a risk of exposing sensitive infos/files thus we use the .gitignore file and inside the file we specify the files we don't want 
+    visible on github }.
+
+ ## Encrypting sensitive variables or files {for this, encryption.js was created}
+    - The .encrypt() method/function returns and encrypted Json value of the encrypted instead of showing the variable in plain text.
+    - The .encrypt() function takes 2 parameters; the password, and the value to encrypt
+    -{after encryption we save the encrypted variable in a json format with the fs keyword } fs.writeFileSync(" The/location/you/want/to/store/it.json", the_encrypted variable)
+    - { this is a better way to initialize a wallet} const wallet = new ethers.Wallet.fromEncryptedJsonSync( encrypt, process.env.PRIVATE_KEY_PASSW);
+        =_ with is this method use import the encrypted version of the private key alongside the password, this is a more secure way to initialize the wallet
+    
+
+# Prettier code format module for our push or deployed file
+    -{download the prettier module} yarn add prettier prettier-plugin-solidity
+    -{create a prettierrc file} inside we are gonna make configurations that are gonna take precidence
+
+# Deploying to a testnet/ mainnet
+    - always add 0x before in front of a private key
+
+# Alchemy Dashboard and Memepool....

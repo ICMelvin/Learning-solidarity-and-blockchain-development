@@ -1,31 +1,7 @@
 // asynchronous programming in js
 
-const ether = require("ethers"); // this is going to import the ethers.js dependency
-const fs = require("fs"); //this is used to read the abi and bin file
-async function asynchronous() {
-  const provider = new ethers.provider.JsonRpcProvider("http://0.0.0.0.8545"); // this is way the script is going to connect with the blockchain
-
-  const wallet = new ethers.wallet(
-    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
-    provider,
-  );
-  const abi = fs.readFileSync(
-    "./pracContract_SimpStore_sol_SimpStore.abi",
-    "utf8",
-  );
-  const bin = fs.readFileSync(
-    "./pracContract_SimpStore_sol_SimpStore.bin",
-    "utf8",
-  );
-  console.log("Deploying...please wait..");
-
-  const contractFactory = new ethers.contractFactory(abi, bin, wallet);
-  const contract = await contractFactory.deploy(); // the await keyword tells every other execution to wait until the contract deploys, if it is removed stuff is gonna return a promise{pending}
-  console.log(contract);
-  const transactionReciept = await contract.deployTransaction.wait(1); // the number specified inside the wait parenthesis is the number of blocks that needs to confirm that transaction went through
-  console.log(transactionReciept);
-
-  // now we are gonna create a transaction with transaction data and sign it with the wallet(private key), this time we wait for the transaction to be signed before deployment
+/*
+  now we are gonna create a transaction with transaction data and sign it with the wallet(private key), this time we wait for the transaction to be signed before deployment
 
   const nonce = await wallet.getTransactionCount(); // gets the correct nonce so we don't have to manually guess it
   const tx = {
@@ -39,14 +15,72 @@ async function asynchronous() {
     chainID: 1337,
   };
 
-  // instead of just signing the transaction we are also gonna send it before signing it and we are gonna wait for a tx reciept(confirmation block) before signing
+  instead of just signing the transaction we are also gonna send it before signing it and we are gonna wait for a tx reciept(confirmation block) before signing
   const sendTx = await wallet.sendTransaction(tx); // sends the transaction
   await sendTx.wait(1); // this waits for a single block confirmation
 
-  // const signTx = await wallet.signTransaction(tx); // signs the transaction
-  // since the sendTransaction() method signs the transaction automatically, we don't need to sign it again
+  const signTx = await wallet.signTransaction(tx); // signs the transaction
+  since the sendTransaction() method signs the transaction automatically, we don't need to sign it again
 }
-asynchronous()
+
+
+*/
+
+// interacting with contracts in ethers.js
+require("dotenv").config();
+
+const ethers = require("ethers"); // importing modules
+const fs = require("fs-extra");
+
+async function Contract() {
+  const abi = fs.readFileSync(
+    "pracContract/pracContract_SimpStore_sol_SimpStore.abi",
+    "utf-8",
+  );
+  const bin = fs.readFileSync(
+    "pracContract/pracContract_SimpStore_sol_SimpStore.bin",
+    "utf-8",
+  );
+  const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
+
+  //const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider); // instead of pasting our private key directly whis is unsafe,
+  // we include it eviroment file that way we could just import and use it via process.env
+
+  // this is a better way to initialize a wallet after encrypting it
+  const encrypt = fs.readFileSync("./.encrypted_key.json", "utf8");
+
+  let wallet = ethers.Wallet.fromEncryptedJsonSync(
+    // this imports the encrypted version of the private key and use it to create the wallet
+    // and we used let because we have to connect the wallet back to our provider
+    encrypt,
+    process.env.PRIVATE_KEY_PASSW,
+  );
+  wallet = await wallet.connect(provider); // this connects the wallet to the proider
+  const contractFactory = new ethers.ContractFactory(abi, bin, wallet);
+
+  console.log("Deploying...");
+  const contract = await contractFactory.deploy(); // deploys the contract
+  const receipt = await contract.deploymentTransaction().wait(1); // waits for a block confirmation response in order to get transaction reciept
+
+  const favNum = await contract.Retrieval();
+
+  // because js is not so good at handling numbers we had to convert to string thus .toString()
+  console.log(` Before recieving value ${favNum.toString()}`);
+
+  // stores the new value, this store function is being called from the solidity contract
+  const storeNew = await contract.store(100000);
+
+  // waits for block confirmation(reciept)
+  await storeNew.wait(1);
+
+  // reads the newly stored value
+  let newAdd = await contract.Retrieval();
+
+  // prints the value that was newly stored
+  console.log(`Newly Stored Number ${newAdd.toString()}`);
+}
+
+Contract()
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error);
