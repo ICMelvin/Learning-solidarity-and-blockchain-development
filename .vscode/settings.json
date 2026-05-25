@@ -1,5 +1,4 @@
 {
-    "wake.compiler.solc.remappings": [
-        "hardhat/=node_modules/hardhat/"
-    ]
+  "wake.compiler.solc.remappings": ["hardhat/=node_modules/hardhat/"],
+  "emmet.useInlineCompletions": true
 }

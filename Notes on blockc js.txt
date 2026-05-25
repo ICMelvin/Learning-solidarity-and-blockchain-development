@@ -243,7 +243,7 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # Keywords in solidity 
-
+  **{Data-Types}
     * Boolean {true or false}
     * uint is an unsigned integer and its positive, you can specify how many bit you want to allocate to uint
     e.g {uint10}
@@ -254,7 +254,7 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
 
 # functions and methods
     functons or methods executes a specific subset of code when called
-    - View and Pure functions when called alone don't spend Gas cause only read the data, and they don't allow the modification of the variable state, furthermore the pure func 
+    - View and Pure functions when called alone don't spend Gas cause they only read the data, and they don't allow the modification of the variable state, furthermore the pure func 
     don't allow you to read from the blockchain state but view does. thats why we don't spend gas when they are used because the don't perform computaional activities, 
     that in-tern requires Gas.the only time it costs gas is when you call it inside a function that performs a computational activity or data modification.
 
@@ -283,7 +283,7 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
 -- There are 6 places data can be stored in solidy {memory locations}; they include:
 
     * Stack 
-    * Memory {is a memory location that temporaly variables that can be modified} exists within a function
+    * Memory {is a memory location that stores temporaly variables that can be modified} exists within a function
     * Storage {are storage locations Don't exitst with a function, and are permanent variables that can be modified }
     * calldata {is a storage location that temporal variables that can't be modified} also exits within a function
     * Code       
@@ -317,10 +317,10 @@ NB: Composability is the ability of a contract to interact with other contracts,
    - require() is used to set the range of value that is accepted, and it reverts what it has executed when a certain condition is not met.
    - this is how to convert Eth to wei {1e18 =( 1 * 10 ** 18)}
    - revert in a smart contract means undoing what it's has done before and then return the gas.
-   - Chainlink data feed Interface is what we use to convert of check the realtime dollor rate of an Eth.
+   - Chainlink data feed Interface is what we use to convert of check the realtime dollar rate of an Eth.
 
         ## Chainlink SDK --sort of
-        - chainlink data feeds provides us with real of chain data and computaional information while making it decentralized
+        - chainlink data feeds provides us with real off-chain data and computaional information while making it decentralized
         - chainlink vrf is a way to get proofably random numbers for our smart contract from the real world
         - chainlink keepers are a way to do decentralized event driven computaion
 
@@ -329,7 +329,7 @@ NB: Composability is the ability of a contract to interact with other contracts,
         msg.value is the amount of wei being sent to perform the computation
     }
 
-    ## NB: Interface gives us a minimalistic ABI to interract contracts outside our project
+    ## NB: Interface gives us a minimalistic ABI to interract contracts outside our project, thus with Interface you can access properties that are not available at the time in that contract.
 
 # Libraries
 --Libraries are similiar to contracts, but you can't declare a state variable or send ether. a Library is embedded into the contract if all Library function are internal 
@@ -340,11 +340,11 @@ otherwise the library must be deployed and then linked before deploying the cont
     
 # SafeMath, overflow checking and unchecked keyword
     - unchecked means that when a a number passes a set upper limit of a number it just reverts back to zero ( this was valid in version 0.6.0 )
-    - The unchecked keyword is used to make sure the set number reverts to 0 is it exceeds it's upper limit.
-    - checked is the set number that shouldn't be exceeded.
+    - The unchecked keyword is used to make sure the set number reverts to 0 if it exceeds it's upper limit. unchecked{}
+    - checked is the set number that shouldn't be exceeded (the upper limit).
 
 # Basic solidity loop
-     - for loop is a way to iterate the a set of objects.
+     - for loop is a way to iterate through a set of objects.
 
   ## reseting an array
     stuff = new address[](0)
@@ -374,12 +374,14 @@ otherwise the library must be deployed and then linked before deploying the cont
    - when a Modifier is created it acts as a keyword to a function during it's declaration, thus modifying the functionality of that function.
    - to create a Modifier, its same way to create a function but instead of function we use Modifier instead
    - the underscore(_;)  tells the compiler to do the rest of the code after or before it has executed the logic or task the modifier was made for.
+   - ++ the example code to this concept is in the modifierEg.sol file ++
 
 # Advanced Solidity concept
   ## constant and immutable keyword (improving gas efficiency)
     - these are keywords that ensure that your variables can be changed or modified.
     - when declaring a constant variable, it is professional the name it in uppercase 
     - These keywords are used to make a contract more gas efficient, they help save gas.
+    - {example} uint256 constant PASS = 235453;
 
   ## Custom errors
     - you can create a custon error outside the contract and use if statements instead of reqiure, (this is more gas efficient)
@@ -394,19 +396,29 @@ otherwise the library must be deployed and then linked before deploying the cont
     - These are special functions
     - recieve() can't send a transaction with data but fallback() can.
     - recieve() and fallback() are declared inside same contract, thus when recieve() fails to send a transaction it's automatically refered to fallback()
+    - ++ the example code to this concept is in the recieve&fallbackEg.sol file ++ 
   
 
 # Ethers.Js 
 - this is a javascript based library for interracting with smart contracts. 
 
-# Asynchronous Programming in javascript
+# Asynchronous Programming in JavaScript
 
-- Synchronous programs are programs that its code goes line by line, one after another, one task has to finish before the other begins
-    -> Synchronous programs returns something called a promise, e.g {pending, fulfilled, rejected}, a promise is the status of the task being executed, Promise is a javascript method by the way.
+    * Synchronous programs execute code line by line — one task must finish before the next one begins.
+    * Asynchronous programs can move on to other tasks while waiting for a slow task (like a network request) to finish.
 
-- Asynchronous programs however executes other blocks or tasks while waiting for the first or already executing task to finish
-    -> To make a function Asynchronous we add "async" before writing the function keyword for a particular function, and with an async function you can access the keyword "await" with tells the program to wait for that 
-    line of code to complete execution before proceeding to the next.
+    * Promises
+        When an async task runs, it returns a Promise — which represents the eventual result of that task. A promise has 3 states:
+
+       - pending — still running
+       - fulfilled — completed successfully
+       - rejected — failed
+
+    * async / await
+       - async marks the function as asynchronous
+       - await pauses execution of that line until the promise resolves, then continues
+
+   ## Note: Synchronous code does not return promises, Promises come from asynchronous operations, not synchronous ones.
 
 # Installation process with yarn/ corepack
 
@@ -432,8 +444,8 @@ otherwise the library must be deployed and then linked before deploying the cont
     - {to install ethers SDK} yarn add ethers
     - {to import ethers use} const ethers = require("ethers")
     - {in order to read the file that contains the, ABI, and bin} we use fs, to import it, we do; const fs = require("fs-extra"), and then const abi = fs.readFileSync(the abi source);
-    - the an await keyword is removed from a syntax that calls the deploy() method, it only returns a promise instead of waiting for the transaction to finish
-
+    - If you remove await from a deploy() call, you get back a Promise object instead of the actual deployed contract instance — meaning your code moves on before the deployment is even done, 
+     so anything you try to do with the contract after that will fail or be undefined
  ## Adding transaction Override
     - {apperently you can add an Override to the deploy function by adding {} inside it's parenthesis and specifying the Override} e.g  contractFactory.deploy({gasPrice : 100000000000})
 
@@ -442,7 +454,7 @@ otherwise the library must be deployed and then linked before deploying the cont
     - however the deployment transaction is the transaction response, this is what you get when you create a transaction.
 
  ## Sending raw transactions in ethersjs
-    - `` this info is available as a comment in the code inside the asy.js file ``
+    - `` this info is available as a comment in the code inside the deploy.js file ``
 
  ## interracting with contracts in ethersjs
     - `` this info is in the code
@@ -462,7 +474,7 @@ otherwise the library must be deployed and then linked before deploying the cont
     - The .encrypt() function takes 2 parameters; the password, and the value to encrypt
     -{after encryption we save the encrypted variable in a json format with the fs keyword } fs.writeFileSync(" The/location/you/want/to/store/it.json", the_encrypted variable)
     - { this is a better way to initialize a wallet} const wallet = new ethers.Wallet.fromEncryptedJsonSync( encrypt, process.env.PRIVATE_KEY_PASSW);
-        =_ with is this method use import the encrypted version of the private key alongside the password, this is a more secure way to initialize the wallet
+        =_ with is this method use import to access the encrypted version of the private key alongside the password, this is a more secure way to initialize the wallet
     
 
 # Prettier code format module for our push or deployed file
@@ -472,4 +484,21 @@ otherwise the library must be deployed and then linked before deploying the cont
 # Deploying to a testnet/ mainnet
     - always add 0x before in front of a private key
 
+# We can verify and publish our code on etherScan
+
 # Alchemy Dashboard and Memepool....
+    - Memepool is the local memory of transaction
+    - Alchemy is an RPC proider
+    - Each node(computer) maintains a copy of the blockchain
+    - Using the transaction hash you can debugg your pending transaction (Drop and replace)
+    - An RPC (Remote Procedure Call) provider is a service that connects decentralized applications (dApps) and crypto wallets to a blockchain network. 
+        It acts as a translator and bridge, allowing software to read blockchain data and submit transactions without running a full blockchain node
+
+# Hardhat{ using hardhat to compile constracts}
+    - Hardhat is a contract development framework
+    - { to setup} yarn dlx hardhat --init or {use npx} npx hardhat --init
+    - for hardhat to see and compile your contracts you have to put the contracts in a folder you strictly named contracts
+    - { to see the list of virtual accounts to use run } yarn hardhat node 
+    - { to compile run } run yarn hardhat compile 
+    - { to deploy the contract with hard stuff} yarn hardhat run thefilepathofthescript
+    - { when using hardhat we import ethers like this } import {network} from "hardhat";
