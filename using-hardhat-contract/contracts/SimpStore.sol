@@ -1,11 +1,14 @@
   // SPDX-License-Identifier: MIT
     // first this is to declare the version of solidity to be used and (^) is to allow newer versions 
+    
 pragma solidity ^0.8.28;
+
 
     // to start a smart contract we use the contraction keyword
 
 contract SimpStore {
     uint256 MyNum;
+
     //assigning values to the struct function
     humans public Mem = humans({age : 23, name : "Melvin"}); // we can use arrays to make stuff dynamic 
     // storage function
@@ -36,6 +39,8 @@ contract SimpStore {
         stud.push(humans(name, age));
         mapNametoNum[name] = age; // mapping a name to the age inside this function.
     }
+
+
 // # calldata, memory and storage
 // struct, mapping and array demands that memory or calldata be specified when declaring a string as a parameter.
 

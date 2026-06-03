@@ -284,7 +284,7 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
 
     * Stack 
     * Memory {is a memory location that stores temporaly variables that can be modified} exists within a function
-    * Storage {are storage locations Don't exitst with a function, and are permanent variables that can be modified }
+    * Storage {are storage locations Don't exist within a function, and are permanent variables that can be modified }
     * calldata {is a storage location that temporal variables that can't be modified} also exits within a function
     * Code       
     * logs
@@ -502,3 +502,90 @@ otherwise the library must be deployed and then linked before deploying the cont
     - { to compile run } run yarn hardhat compile 
     - { to deploy the contract with hard stuff} yarn hardhat run thefilepathofthescript
     - { when using hardhat we import ethers like this } import {network} from "hardhat";
+    - the model we imported call hre is a hardhat run time Environment that gives you access to the hardhat full tool set.
+    - { to be able to deploy to an actual network that is not hardhat VM go to the hardhat.config.ts and add the network} eg{
+        network: {
+            sepolia:{
+                type: "http",
+                url: THE_RPC_URL,
+                accounts: [THE_PRIVATE_KEY],
+                chainId: 1893840,
+
+            },
+        }
+    } 
+      you can only add those variables that way if you have initially declared them in the file 
+
+# How to verify smart contract on etherscan programatically
+    - {first install the plugin for the verification} yarn add --dev @nomicfoundation/hardhat-verify
+    - { then import it at the top of your hardhat.config file } import "@nomicfoundation/hardhat-verify"
+    - { then add the verify section in you hardhat.config file} 
+        
+        verify: {
+            etherscan: {
+                apiKey: process.env.ETHERSCAN_API_KEY
+            },
+        },
+    
+    - {Then run this command in the terminal to verify and deploy on etherscan} yarn hardhat verify --network sepolia <THE CONTRACT ADDRESS>, {we could write an async function 
+    to run stuff automatically, but i ain't doing that}.
+
+# How to interract with our contract in hardhat (like storing and viewing and adding stuff)
+    => details and examples about this is in the code of the deploy.js
+
+# How to write your own plugins/tasks on Hardhat
+    => this info is available in the /tasks/block-number.js file
+    - After you have created a task, in order to make it show up in your hardhat list of task, you add the file path to your config file; import {theNameOfYourTask} from "filepath"
+    - { this is what is used to ignore ts/ js compactability error } @ts-ignore
+
+    - >> this is the entire code explained
+            
+            // We import the `task` function from hardhat/config.
+        // This function is used to define custom tasks that Hardhat can run from the CLI.
+        import { task } from "hardhat/config";
+
+        // We define a new task called "block-number" and export it so it can be
+        // imported and registered in hardhat.config.ts via the `tasks` array.
+        export const myNewTask = task(
+        "block-number", // The task name — what you type in the CLI: `yarn hardhat block-number`
+        "Prints the current block number", // Description — shows up when you run `yarn hardhat help`
+        )
+        .setInlineAction(
+            // setInlineAction() is used for simple tasks where you want to define
+            // the logic directly here instead of in a separate file.
+            // It takes an anonymous async function with two parameters:
+            // - taskArgs: any CLI arguments passed to the task (none in this case)
+            // - hre: the Hardhat Runtime Environment — gives you access to everything
+            //   Hardhat provides: network config, provider, plugins, and more.
+            async (taskArgs, hre) => {
+            // In Hardhat v3, you must explicitly connect to the network before
+            // you can interact with it. hre.network.connect() establishes that
+            // connection and returns a provider object.
+            // The `provider` is your gateway to the blockchain — it lets you
+            // send requests like getting block numbers, balances, transactions, etc.
+            const { provider } = await hre.network.connect();
+
+            // provider.request() sends a JSON-RPC request to the network.
+            // "eth_blockNumber" is a standard Ethereum JSON-RPC method that
+            // returns the latest block number as a hexadecimal string e.g "0x1a2b3c".
+            const blockNumber = await provider.request({ method: "eth_blockNumber" });
+
+            // blockNumber comes back as a hex string like "0x1a2b3c".
+            // parseInt() with base 16 converts it to a regular number.
+            // e.g parseInt("0x1a2b3c", 16) => 1715004
+            console.log("Current block number:", parseInt(blockNumber, 16));
+            },
+        )
+        // .build() finalizes the task definition and returns a task object.
+        // Without this, the task is incomplete and can't be registered in the config.
+        .build();
+
+# Hardhat localhost Node
+    => yarn hardhat node or npx hardhat node
+    - {to see transaction information just like you would see in Ganache or other RPC providers} # first run the hardhat node as shown above.
+        # second run the deployment scripts but now specify the network to be localhost; yarn hardhat run scripts/deploy.js --network localhost.
+    
+
+# Hardhat console
+    - {The hardhat console is there and it's in JS to help you avoid writing scripts in order to interract with your contract} yarn hardhat console --network thenetwork
+    - but i advice you just write your script cause its time consume 
