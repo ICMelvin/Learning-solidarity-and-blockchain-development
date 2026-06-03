@@ -588,4 +588,4 @@ otherwise the library must be deployed and then linked before deploying the cont
 
 # Hardhat console
     - {The hardhat console is there and it's in JS to help you avoid writing scripts in order to interract with your contract} yarn hardhat console --network thenetwork
-    - but i advice you just write your script cause its time consume 
+    - but i advice you just write your script cause its time consume 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
