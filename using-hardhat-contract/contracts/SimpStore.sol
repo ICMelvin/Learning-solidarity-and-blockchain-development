@@ -39,6 +39,9 @@ contract SimpStore {
         stud.push(humans(name, age));
         mapNametoNum[name] = age; // mapping a name to the age inside this function.
     }
+    function getStudent(uint256 index) public view returns (string memory, uint256){
+        return (stud[index].name, stud[index].age);
+    }
 
 
 // # calldata, memory and storage

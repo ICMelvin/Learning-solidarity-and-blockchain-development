@@ -3,6 +3,8 @@ import hre from "hardhat"; // hardhat runtime environment - gives access to hard
 import dotenv from "dotenv"; // loads environment variables from .env file
 dotenv.config(); // initializes dotenv so process.env variables are available
 
+//Always compile before running tests
+
 async function Contract() {
   // connect to the network and destructure ethers (for contract interaction)
   // and networkName (the name of the network we're deploying to e.g "hardhat", "sepolia")
@@ -36,6 +38,10 @@ async function Contract() {
   const storeName = await contraAdd.storing("LORD MELVIN !");
   const seeName = await contraAdd.see();
   console.log(seeName);
+  const addStud = await contract.addStudent("Melvin", 23);
+  console.log("New student added");
+  const getStud = await contract.getStudent(0);
+  console.log(`Student name: ${getStud[0]}, Student age: ${getStud[1]}`);
 }
 
 Contract()

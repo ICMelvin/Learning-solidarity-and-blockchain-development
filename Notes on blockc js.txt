@@ -518,7 +518,7 @@ otherwise the library must be deployed and then linked before deploying the cont
 
 # How to verify smart contract on etherscan programatically
     - {first install the plugin for the verification} yarn add --dev @nomicfoundation/hardhat-verify
-    - { then import it at the top of your hardhat.config file } import "@nomicfoundation/hardhat-verify"
+    - { then import it at the top of your hardhat.config file } import hardhatVerify from "@nomicfoundation/hardhat-verify"
     - { then add the verify section in you hardhat.config file} 
         
         verify: {
@@ -532,6 +532,8 @@ otherwise the library must be deployed and then linked before deploying the cont
 
 # How to interract with our contract in hardhat (like storing and viewing and adding stuff)
     => details and examples about this is in the code of the deploy.js
+
+==>> Do note that tasks are for plugins and deploy scripts are for your local  development.
 
 # How to write your own plugins/tasks on Hardhat
     => this info is available in the /tasks/block-number.js file
@@ -588,4 +590,42 @@ otherwise the library must be deployed and then linked before deploying the cont
 
 # Hardhat console
     - {The hardhat console is there and it's in JS to help you avoid writing scripts in order to interract with your contract} yarn hardhat console --network thenetwork
-    - but i advice you just write your script cause its time consume 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
+    - but i advice you just write your script cause its time consume 
+
+# Testing our Smart contract {running Tests in hardhat}
+    - rekt.news is a site that has a list of previous hacked contracts and how they occoured.
+    - Hardhat testing works with the MOCHA framework which is a JavaScript feature-rich framework that runs on Node.js and the browser
+    - {to install MOCHA} yarn add -D mocha
+    - {to start writing our test script we make use of the describ function} describ('simpstore', ananymousfunction){}
+    - {an ananymous functon can be written in two ways} #1st == functiom (){} or #second == () = {}
+    - { inside a function written in written in a describe keyword, we have conditionals called} beforeEach() and it(), the actual test codes are written inside the it()
+    - {you can also do describe nesting} like having describes inside a describe and more beforeEach( ) and it()
+    ==> The rest of the code and details are in the test.js code file found in the test folder
+  
+    => diclaimer:: my hardhat thingy was not picking up my test script so i added this to my package.json == 
+            "scripts"{
+                "test":"mocha test/**/*.test.js"
+            }
+
+        now i run yarn test to test my script
+
+# Hardhat Gas Reporter
+    - this displays how much gas each of our transaction cost, and it displays it in table form
+    - 
+    ==> Hardhat-gas-reporter can't be useed in v3
+
+# Solidity Coverage
+    - This is a tool for tightening Security in our smart contract in order to make sure that it doesn't get hacked when it's deployed to the real world.
+    - it goes through our contract test to see how many lines of the solidity code are actually covered in the test script
+    - {to install it } yarn add --dev solidity-coverage
+    - { after installing, import it in the config file and to run it use} yarn hardhat coverage
+    ==> Do note that it does not work in v3
+
+# Hardhat Waffle
+    - This is a frame work that allows us to do really advanced tasting
+
+
+#==== Lesson 7=====#
+
+# Hardhat found me 
+    

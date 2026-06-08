@@ -2,6 +2,9 @@
   "name": "using-hardhat-contract",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "test": "mocha test/**/*.test.js"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^4.0.12",
     "@nomicfoundation/hardhat-verify": "^3.0.18",
@@ -14,6 +17,7 @@
     "ethers": "^6.16.0",
     "hardhat": "^3.5.1",
     "license": "^1.0.3",
+    "mocha": "^11.7.6",
     "prettier": "^3.8.3",
     "prettier-plugin-solidity": "^2.3.1",
     "typescript": "~6.0.3"
