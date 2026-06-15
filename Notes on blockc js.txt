@@ -628,4 +628,54 @@ otherwise the library must be deployed and then linked before deploying the cont
 #==== Lesson 7=====#
 
 # Hardhat found me 
+   - {first as always in a new project we add our hardhat dependencies} yarn dlx hardhat --init or yarn hardhat --init {and you are using npm} npx hardhat --init 
+   - ESLint is a javascript linter that helps you automatically find and fix problems in your code.
+   - Linting however is the process of running a program to analyz a code for potential errors (solLint, ESLint).
+   - {instead of always using scripts to deploy our contracts which could constitute errors we could use the hardhat deploy package} yarn add --dev hardhat-deploy
+   - {Now instead of script folder we have a deploy folder and deploy is easier} yarn hardhat deploy
+   ==> more details about deploy is in the code. 
+   -- this is the Installation and setup process::
+
+      Step 1:  yarn add --dev hardhat-deploy rocketh @rocketh/node @rocketh/deploy
+      Step 2: import hardhatDeploy from "hardhat-deploy";
+
+            export default defineConfig({
+            plugins: [hardhatDeploy],
+            // ...
+            });
+     Step 3: export default = async (hre) => {
+        console.log('deploying')
+     }
+
     
+   - {after importing the chainlink inteface, you have to still download it using yarn or npm in order for it to Compile} yarn add --dev @chainlink/contracts
+
+# Mocking & helper hardhat-config 
+
+    - helper-hardhat-config.helper-hardhat-config.js is a separate configuration file that holds network-specific constants and metadata used across your deploy scripts. 
+    Instead of hardcoding values like Chainlink price feed addresses or chain IDs directly in your deploy scripts, you centralize them here and import as needed. It typically contains:
+
+       * networkConfig — maps chain IDs to network-specific values (price feed addresses, VRF coordinators, etc.)
+       * developmentChains — list of local networks so deploy scripts know when to use mocks instead of real contracts
+       * Mock constants — like DECIMALS and INITIAL_ANSWER for local mock deployments
+
+        Keeps your deploy scripts clean and makes adding new networks as simple as dropping a new entry in networkConfig.
+
+    - Mocking in Hardhat is the practice of deploying fake versions of external contracts (like Chainlink price feeds) 
+    on your local network since those real contrac…Mocking in Hardhat is the practice of deploying fake versions of external contracts (like Chainlink price feeds) 
+    on your local network since those real contracts don't exist on hardhat or localhost.
+
+       * MockV3Aggregator.sol — a fake Chainlink price feed contract you deploy locally that mimics the real one's interface
+       * A mock deploy script (e.g. 00-deploy-mocks.js) — checks if you're on a development chain using developmentChains, and if so deploys the mock instead of pointing to a real feed address
+       * DECIMALS and INITIAL_ANSWER from your helper-hardhat-config.js — used as constructor args when deploying the mock to simulate a realistic price feed response
+
+    The flow is: if local → deploy mock and use its address; if testnet/mainnet → grab the real price feed address from networkConfig. This lets you test your contracts fully offline without needing
+    real network connections or spending testnet ETH.
+
+    - Sometimes you may just need to import the v3 from a github thingy like avee using at @chainlink/contracts 
+    - {one common problem to run into is working with contracts that are not in the same version of solidity you are Using you can resolve that issue by adding this to your config file}
+            solidity: {
+                compilers: [{version:"0.8.28"}, {version:"0.6.8"}]
+            } ,
+
+hardhat-deploy does'nt work for v3

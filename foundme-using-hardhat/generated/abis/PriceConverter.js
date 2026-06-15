@@ -1,0 +1,1 @@
+export const Abi_PriceConverter = /** @type {const} **/ ([]);
