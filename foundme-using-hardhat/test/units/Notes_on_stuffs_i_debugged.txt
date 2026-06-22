@@ -1,0 +1,19 @@
+# What went wrong
+    Your foundme-using-hardhat project had hardhat-deploy v2 + rocketh installed (required for Hardhat v3), but the deploy scripts, config, and helper file were still written for hardhat-deploy v1 — 
+    a completely different API. v2 is a full rewrite, not a drop-in upgrade.
+
+# Issues, in the order we hit them:
+
+    getNamedAccounts is not a function — v1 deploy scripts call await getNamedAccounts() on the hre. v2 has no such function; named accounts are just a plain object: env.namedAccounts.
+    Missing rocketh/deploy.js — v2 requires this file to wire up deployScript() and artifacts for your deploy scripts to import from. It didn't exist yet.
+    Network/chain detection silently failed — your old code checked developmentChains.includes(network.name) (e.g. "hardhat"). In v2's test-runner context, the environment name comes back as the literal string "memory", never "hardhat". Fix: check env.network.chain.id (the numeric chain ID, 31337) instead of the name.
+    rocketh/config.js was missing accounts — v2 reads named accounts (deployer, user, etc.) exclusively from this file's exported config.accounts, not from namedAccounts in hardhat.config.js like v1 did. Without it, deployer resolved to undefined.
+    PriceConverter in the test's contract list — it's a Solidity library inlined into FundMe, never deployed on its own, so env.get("PriceConverter") had nothing to find.
+
+# What fixed it
+
+    Created rocketh/deploy.js exporting deployScript + artifacts
+    Added accounts: { deployer: {...}, user: {...} } to rocketh/config.js
+    Rewrote 00-deploy-mocks.js and 01-deploy.js to use deployScript(), env.namedAccounts, env.deploy() with account:/artifact: instead of from:
+    Changed developmentChains to hold chain IDs ([31337]) instead of names
+    Dropped PriceConverter from the test's contract list

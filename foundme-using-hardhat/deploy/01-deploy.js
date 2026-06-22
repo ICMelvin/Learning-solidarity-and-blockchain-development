@@ -1,20 +1,26 @@
-import { networkConfig } from "../helper-hardhat-config.js";
+import { deployScript, artifacts } from "../rocketh/deploy.js";
+import { networkConfig, developmentChains } from "../helper-hardhat-config.js";
 
-export default async function (hre) {
-  const { deployments, getNamedAccounts, network } = hre;
-  const { deploy, log } = deployments;
-  const { deployer } = await getNamedAccounts();
-  const chainId = network.config.chainId;
+export default deployScript(
+  async (env) => {
+    const { deployer } = env.namedAccounts;
+    const chainId = env.network.chain.id;
 
-  const ethPriceFeedAddress = networkConfig[chainId].ethUsdPriceFeed;
-  const args = [ethPriceFeedAddress];
+    let ethUsdPriceFeedAddress;
+    if (developmentChains.includes(chainId)) {
+      const mockV3Aggregator = env.get("MockV3Aggregator");
+      ethUsdPriceFeedAddress = mockV3Aggregator.address;
+    } else {
+      ethUsdPriceFeedAddress = networkConfig[chainId].ethUsdPriceFeed;
+    }
 
-  const fundMe = await deploy("FundMe", {
-    from: deployer,
-    log: true,
-    args,
-  });
+    const fundMe = await env.deploy("FundMe", {
+      account: deployer,
+      artifact: artifacts.FundMe,
+      args: [ethUsdPriceFeedAddress],
+    });
 
-  log(`FundMe deployed to ${fundMe.address}`);
-}
-export const tags = ["all", "fundme"];
+    console.log(`FundMe deployed to ${fundMe.address}`);
+  },
+  { tags: ["all", "fundme"] },
+);

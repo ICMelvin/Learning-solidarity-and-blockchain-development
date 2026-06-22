@@ -8,7 +8,7 @@ const networkConfig = {
   },
 };
 
-const developmentChains = ["hardhat", "localhost"];
+const developmentChains = [31337]; // chain IDs, not names
 const DECIMALS = 8;
 const INITIAL_ANSWER = 200000000000; // $2000
 

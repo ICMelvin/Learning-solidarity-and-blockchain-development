@@ -679,3 +679,47 @@ otherwise the library must be deployed and then linked before deploying the cont
             } ,
 
 hardhat-deploy does'nt work for v3
+
+
+# Solidity Style Guide
+    - There are some conventions for naming variable and ordering a code to make it look professional
+    --# the Smart contract layout should follow this order #--
+
+        * Pragma statement
+        * Import Statement 
+        * Error functon statement
+        * Interfaces 
+        * Libraries
+        * Contracts
+
+     # however inside the contracts, Libraries, or Interface  it should follow this order #
+
+        * Type declaration
+        * State variables
+        * Events
+        * Modifiers
+        * Functions
+   NB: NatSpec means Ethereum Natural-Language Specification Format. to learn more go to the solidity documentation.
+
+# Testing {Fundme}
+    - There are two different types of tests {Unit and Staging}.
+        * Unit : unit tests is used to test minimal portions of our codes on a local VM.(done locally)
+        * Staging : when the unit tests go through successfully we then proceed to staging(intgration), this is when we run our codes o a testnet or a mainnet.(done on testnets)
+        
+# Break-Points and Debugging
+    - In VS-CODE you can create a break-point in the line where you want you script to stop while you bring it to the debugg console.
+    - { you can also use console.log in solidity, to do that, you import it} import "hardhat/console.sol"
+    - { in order to give multiple funders access to withdraw in your contract, you loop through the different accounts in order to connect them}
+    - { in VS-CODE if you want to change the name of a certain variable that has appeared to many times just} highlight the variable => ctr f => click on the dropdown and change
+
+# Storage in Solidity   
+    - Storage is like a giant array or a giant list that keeps a list of all the variables we create.
+    - Constant or immutable variables do not take up a slots in the storage  
+    - Variables whos scope are within a function do not take up a slot in storage, thus they don't persist.
+    - in order to make retrieving and storing variables take less gas than it normally does, you can add (load) it to memory, thus with this it does not repeadedly
+         keep going to storage to read and store which costs gas 
+    - Do not forget that mappings can't be loaded into memory, cause it's too wacky.
+         
+## Staging Tests
+
+

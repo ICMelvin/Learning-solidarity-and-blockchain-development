@@ -1,10 +1,12 @@
 import { defineConfig } from "hardhat/config";
 import hardhatDeploy from "hardhat-deploy";
+import hardhatNodeTestRunner from "@nomicfoundation/hardhat-node-test-runner";
+import hardhatNetworkHelpers from "@nomicfoundation/hardhat-network-helpers";
 import dotenv from "dotenv";
 dotenv.config();
 
 export default defineConfig({
-  plugins: [hardhatDeploy],
+  plugins: [hardhatDeploy, hardhatNodeTestRunner, hardhatNetworkHelpers],
   solidity: {
     compilers: [{ version: "0.8.28" }],
   },
