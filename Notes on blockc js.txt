@@ -3,23 +3,23 @@
 
 # Blockchain Basics
 
-    * Smart constracts are a set of instructions executed in a decentralized way without the need of centralized 
-    or third-party intermidiary, {it's a decentralized agreement}, etherium blochain brought smart contracts
-    to life.
+    * Smart constract is basically a code that lives in a blockchain and runs automatically when a certain condition is met and it requires no third party intermidiary,
+     etherium blochain brought smart contracts to life.
 
     ## NB: DEFI means decentralized finance.
         -Bitcoin was the first protocol to take the blockchain technology.
         -Etherium  brought about the smart contract
-        -Chainlink is a decentralized oracle that allows Hybrid smart contracts.
-        -Smart contract are Trust Mininmized agreements
-        -Blockchain is being run by multiple nodes and validators
+        -Chainlink is a decentralized oracle network that allows Hybrid smart contracts.
+        -Smart contract are Trust Mininmized agreements that lives in a blockchain
+        -Blockchain is like a digital ledger that holds the record of transactions accross multiple nodes(computer), and each node is an instance of the other.
         -EVM means Ethereum Virtual Machine.
-
-    *Blockchain Oracles are devices that interacts with off-chain world in other to provide external data for 
-    the computaion for smart contracts. why this device came to be was because the Blockchain can't communicate 
-    with the real world which means they deterministic systems they don't get real data from the real world because Blockchains are intensionally 
-    walled off, but in order to properly form a smart contract the need external data and computaion
-    this created the oracle problem that the oracle devices solved.
+   
+    * Blockchain Oracles are Services that feed external (off-chain) data into smart contracts.
+    (Oracle Problem): Blockchains are deterministic and intentionally walled off thus they can't access outside data on their own. But smart contracts often need real-world data (prices, randomness, etc.)
+     to function. That gap is the Oracle Problem.
+    Solution: Oracles fetch and deliver verified off-chain data on-chain.
+    Types: Price feeds, computational data, randomness (VRF), cross-chain.
+    Security note: Oracles are a top DeFi attack surface — manipulation (e.g., via flash loans) is a common exploit
 
     * Hybrid Smart constracts incorperates decentralized and centralized smart contracts
     the reason this was created was because the Blockchain still needed its data and computation to stay
@@ -27,24 +27,34 @@
     which is a collection of oracle nodes in order ensure that the data and computaion is not centralized in a 
     single node.
 
-    * Chainlink protocol is a modular decentralized oracle network that brings in both the eternal data and computaion  needed
-    for the smart contracts while making sure they are decentralized end to end and still gives us this richness
-    that we need for our agreement. it works on any blochain.
+    * Chainlink Protocol is A modular, decentralized oracle network (DON) that delivers external data and computation to smart contracts, while making it decentralized.
+
+    Key traits:
+
+    Decentralized end-to-end — no single point of failure or trust
+    Chain-agnostic — works across any blockchain
+    Rich functionality — beyond just price feeds: computation, automation, cross-chain messaging, etc.
 
     *Dapp this means decentralized applications or decentralized protocol and stuff that relates to smart contracts,
     this is the combination of many smart contracts.
 
 # Difference between Web1, Web2, and Web3
 
-    * Web1: This is a permissionless web where you can only read or see information without being able to contribute, 
-    has static content.
+    Web1 — Read-only
 
-    * Web2: this is a permissoned web you can read and contribute to the information or data, has Dynamic content. this is where
-    companies run your agreements on their servers.
+    Permissionless, static content
+    You can view info but not contribute
 
-    *Web3: This is a permissionless web with Dynamic content, where decentralized censorship run your agreements
-    and codes. here you don't only contribute to the product or data, you also own part of it,
+    Web2 — Read + Write
 
+    Permissioned, dynamic content
+    You contribute data, but data and agreements are centrally owned and controlled
+
+    Web3 — Read + Write + Own
+
+    Permissionless, dynamic content
+    Decentralized networks (not companies) run the code/agreements
+    You contribute and own a share of the product/data
     
 # Smart contracts give rise to Trust Mininmize Agreements, like unbreakable promises, smart contracts are immutable, decentralized and Transparent.
 .....Purpose of smart contracts includes
@@ -92,38 +102,35 @@
 
     ** {Went to a site called blockchain demo to discover the Difference btm hash, block, blockchain, distributed
     tokens, and coinbase}
-
-    * Hash; had a fixed strict string length no matter how large the data is.
    
-    * Block; also hashes data with a fixed string length but it has a unique number called (nonce) 
-    that is used to mine each data with a given block number. a nonce is used by miners to solved a mathimatical
-    computational problem in a blockchain, thus when they are mining they are looking for a particular nonce that 
-    solved the computational problem they have or are given. the core Difference btm a Hash and a block is that a hash
-    just hashes its given data but a block hashes with three Things(block no., nonce, and data)
-   
-    * Blockchain; is a collection of blocks but something is added to each block called (previous), this contains
-    the hash of the previous block before that particular block. the first block in a blockchain is called the
-    (Genesis block) and the previous hash it holds is non exsitent. thus this hashes data like a block but it now 
-    also includes the hash from the previous block when hashing and if the previous block is altered the current
-    and the ones after would be affected as well, this is what makes blockchains immutable.
+    ** Block is Like a hash, it condenses data into a fixed-length string, but a block also includes a nonce.
+    Nonce: A number miners search for to solve the block's computational puzzle (Proof of Work). Mining = repeatedly trying different nonces until one produces a valid hash (e.g., below a target difficulty).
+    Core difference:
 
-    * Distributed(decentralized); distributes the same blockchain data and hash in peers/nodes that way each has a copy of
-    the other peer block chain data and when a single blockchain decides to alter it's data, it would no longer 
-    match that of the other peers hence invalid. in other words the list of transactions in a blockchain 
-    is distributed in different inter-connected instances.
+    Hash → hashes just the data
+    Block → hashes three components: block number, nonce, and data
+   
+    * Blockchain is a collection of blocks, where each block adds one more field — previous hash (the hash of the block before it).
+    Genesis block: The first block in the chain; its "previous hash" field is non-existent/null.
+    How it hashes: Like a block, but now includes four components: block number, nonce, data, and the previous block's hash.
+    Why it's immutable: Since each block's hash depends on the previous block's hash, altering any block changes its hash thus breaking the chain link and invalidating that block plus every block after it.
+
+    * Distributed (Decentralized) this is when the same blockchain data is copied across many peers/nodes — each node holds an identical copy of the full chain.
+    How it ensures integrity: If one node alters its data, that copy no longer matches the rest of the network — making it instantly identifiable as invalid.
+    In short: Transactions aren't stored in one place; they're replicated across many interconnected nodes, and consensus among them determines what's valid and whats not.
 
     * Tokens; 
 
  ## Things to keep in mind about blockchains
     * Hash is a unique fixed length string that identifies a piece of data.
-    * Hash algorithm/function is a function that computes data in to a unique hash
+    * Hash algorithm/function is a function that computes data into a unique hash
     * Minig is the process of finding the solution to a blockchain problem. thus nodes get paid for minig blocks 
     * Block is a list of transactions mined together, in a block chain a block consists of the nonce, block no.
     previous hash from the predecessory block and the current hash, and the transaction/data being hashed.
     * Blockchains are decentralized, this means it has no single point of authority.
     * Nonce is a number used once to find the solution to a blockchain problem. hence the name nonce(number once).
     a nonce can also be used to define the transaction number of an account/ address
-    *
+    
 
 # Signing transactions
 
@@ -146,20 +153,19 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
 # High Level Blockchain fundamentals
     * Blockchain is a decentralized database
     * Consensus is a mechanism used to agree on the state of a blockchain
-    * Sybil Resistance is a way for a block to stop users from making fake ananymous blockchains 
-    to influence a network
+    * Sybil Resistance is a way for a block to stop users from making fake ananymous blockchains to influence a network
     * Layer 1 is the base layer blockchain solutions 
     * Layer 2 is any application built ontop of layer 1 blockchain that also benefits from the layer tight Security e.g(Chainlink, {arbitron and optmizim} => Rollups)
 
 ## Things to keep in mind concerning high level blockchain fundamentals
     * ETH & BTC are blockchains that uses proof of work(PoW), they follow nakamoto Consensus
-    * ETH 2.0 uses proof of stake (PoS)
+    * ETH MERG uses proof of stake (PoS) which they adopted in 2022
     * The bigger the blockchain the more secure it is.
     * Sharding and Rollups are the solutions to scalability issues in a blockchain 
     * Only so many transactios can fit into a block, the is the scalability problem that sharding solved.
     * Blockchain nodes keeps a list of transactions that occur {this way when the transaction is compared and if
     there is a node out of sync that node is deemed to be acting malicously and possibly punished or kicked out}
-    * Consensus is the machanism used to agree on the state of a blockchain, this is brokedown into two which are
+    * Consensus is the machanism used to agree on the state of a blockchain, this is brokendown into two which are :
 
      ** Chain selection algorithm{
         - uses Consensus (which is the combination of the longest chain rule and proof of work {nakamoto Consensus})
@@ -181,7 +187,7 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
     * Rollups are layer 2 blochains that rollup their transactions into layer 1 e.g [arbitron and optimism]
     * A scalability problem in a blockchain is that a block can only hold a certain amount of transaction at a 
     given time which leads to very high gas prices.
-    * Gas price is how much it costs to run a execution a blockchain.
+    * Gas price is how much it costs to run a computaion on a blockchain.
 
     
 ==# Lession 2, coding stuff, [go to github for more info smartcontractkit]
@@ -240,7 +246,7 @@ NB: your mnemonic key(seed phrase) + your account number or address gives you yo
     * nvm use 25    # for whatever needs the latest Node
 
     ## download solidity (wake) in order to get off easy
-    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 # Keywords in solidity 
   **{Data-Types}
@@ -307,7 +313,7 @@ NB: Composability is the ability of a contract to interact with other contracts,
 # Iheritance 
     -Iheritance is when a contract or a function inherites the properties of other contracts or functions
     - The (is) Keyword is used to make a contract or function inherit other function/ contract properties e.g {simpstore is extraStore}
-    - Virtual is a Keyword used to make the inherited function overridable.
+    - Virtual is a Keyword used to make a function inside the inherited contract overridable.
     - Override is a Keyword passed to the function within a contract that inherited stuff from the contract you intend to Override.  
     - Bear in mind that when you import a contract, the ABI(functions) of that contract are  being declared as types in the contract that inherited it.
 
@@ -332,14 +338,14 @@ NB: Composability is the ability of a contract to interact with other contracts,
     ## NB: Interface gives us a minimalistic ABI to interract contracts outside our project, thus with Interface you can access properties that are not available at the time in that contract.
 
 # Libraries
---Libraries are similiar to contracts, but you can't declare a state variable or send ether. a Library is embedded into the contract if all Library function are internal 
-otherwise the library must be deployed and then linked before deploying the contract.
+    --Libraries are similiar to contracts, but you can't declare a state variable or send ether. a Library is embedded into the contract if all Library function are internal 
+    otherwise the library must be deployed and then linked before deploying the contract.
 
     - Libraries are created in same way smart contracts are created, just replace the "contract" with "library".
     - Libraries must be made internal instead of public.
     
 # SafeMath, overflow checking and unchecked keyword
-    - unchecked means that when a a number passes a set upper limit of a number it just reverts back to zero ( this was valid in version 0.6.0 )
+    - unchecked means that when a number passes a set upper limit of a number it just reverts back to zero ( this was valid in version 0.6.0 )
     - The unchecked keyword is used to make sure the set number reverts to 0 if it exceeds it's upper limit. unchecked{}
     - checked is the set number that shouldn't be exceeded (the upper limit).
 
@@ -396,6 +402,7 @@ otherwise the library must be deployed and then linked before deploying the cont
     - These are special functions
     - recieve() can't send a transaction with data but fallback() can.
     - recieve() and fallback() are declared inside same contract, thus when recieve() fails to send a transaction it's automatically refered to fallback()
+    - Both recieve and fallback are made external and payable
     - ++ the example code to this concept is in the recieve&fallbackEg.sol file ++ 
   
 
@@ -404,7 +411,7 @@ otherwise the library must be deployed and then linked before deploying the cont
 
 # Asynchronous Programming in JavaScript
 
-    * Synchronous programs execute code line by line — one task must finish before the next one begins.
+    * Synchronous programs execute code line by line — one task must finish before the next one begins (Start - finish - proceed).
     * Asynchronous programs can move on to other tasks while waiting for a slow task (like a network request) to finish.
 
     * Promises
@@ -435,14 +442,14 @@ otherwise the library must be deployed and then linked before deploying the cont
         // with this we can just run yarn compile to compile our contract
 
 # Ganache & Network
- // NB: RPC stands for remote preceedure call
+ // NB: RPC stands for remote preceedure call // RPC URLs are virtual blockchain networks or access to them.
     - Ganache is a software that allows you to run a Virtual blochain
     - Network is where the contract is deployed to
 
 # Ethers.js (entry)
- // ethers.js is one of the javascript based SDK for interracting with a blochain
+ // ethers.js is one of the javascript based SDK for interracting with a blockchain
     - {to install ethers SDK} yarn add ethers
-    - {to import ethers use} const ethers = require("ethers")
+    - {to import ethers use} const ethers = require("ethers") or import {network} from "ethers"
     - {in order to read the file that contains the, ABI, and bin} we use fs, to import it, we do; const fs = require("fs-extra"), and then const abi = fs.readFileSync(the abi source);
     - If you remove await from a deploy() call, you get back a Promise object instead of the actual deployed contract instance — meaning your code moves on before the deployment is even done, 
      so anything you try to do with the contract after that will fail or be undefined
@@ -460,11 +467,11 @@ otherwise the library must be deployed and then linked before deploying the cont
     - `` this info is in the code
 
  ## Environment variables (.env)
-    - Environment files is where you store sensitive information and the environmental variables are the sensitive information, e.g {private key and the rest of it}
+    - Environmental files is where you store sensitive information and the environmental variables are the sensitive information, e.g {private key and the rest of it}
     - {to create an Environment file we use} .env 
     - Environment files/ variables are in our scripting Environment, like terminal
     - {the dotenv package allows you to access your environmental file/variables} yarn add dotenv. you can make it global if you want
-    - {then import it } require("dotenv").config()
+    - {then import it } require("dotenv").config() or import dotenv from "dotenv"...then initialize it dotenv.config().
     - { to use it where you want it to be, you do} process.env.THE_NAME_OF_THE_VARIABLE
     - {when pushing code to the github repo we stand a risk of exposing sensitive infos/files thus we use the .gitignore file and inside the file we specify the files we don't want 
     visible on github }.
@@ -490,7 +497,7 @@ otherwise the library must be deployed and then linked before deploying the cont
     - Memepool is the local memory of transaction
     - Alchemy is an RPC proider
     - Each node(computer) maintains a copy of the blockchain
-    - Using the transaction hash you can debugg your pending transaction (Drop and replace)
+    - Using the transaction hash you can debugg your pending transaction (Drop and replace) in the Memepool
     - An RPC (Remote Procedure Call) provider is a service that connects decentralized applications (dApps) and crypto wallets to a blockchain network. 
         It acts as a translator and bridge, allowing software to read blockchain data and submit transactions without running a full blockchain node
 
@@ -499,8 +506,8 @@ otherwise the library must be deployed and then linked before deploying the cont
     - { to setup} yarn dlx hardhat --init or {use npx} npx hardhat --init
     - for hardhat to see and compile your contracts you have to put the contracts in a folder you strictly named contracts
     - { to see the list of virtual accounts to use run } yarn hardhat node 
-    - { to compile run } run yarn hardhat compile 
-    - { to deploy the contract with hard stuff} yarn hardhat run thefilepathofthescript
+    - { to compile run } yarn hardhat compile 
+    - { to deploy the contract with hardhat stuff} yarn hardhat run thefilepathofthescript
     - { when using hardhat we import ethers like this } import {network} from "hardhat";
     - the model we imported call hre is a hardhat run time Environment that gives you access to the hardhat full tool set.
     - { to be able to deploy to an actual network that is not hardhat VM go to the hardhat.config.ts and add the network} eg{
@@ -597,8 +604,8 @@ otherwise the library must be deployed and then linked before deploying the cont
     - Hardhat testing works with the MOCHA framework which is a JavaScript feature-rich framework that runs on Node.js and the browser
     - {to install MOCHA} yarn add -D mocha
     - {to start writing our test script we make use of the describ function} describ('simpstore', ananymousfunction){}
-    - {an ananymous functon can be written in two ways} #1st == functiom (){} or #second == () = {}
-    - { inside a function written in written in a describe keyword, we have conditionals called} beforeEach() and it(), the actual test codes are written inside the it()
+    - {an ananymous functon can be written in two ways} #1st == functiom (){} or #second == () => {}
+    - { inside a function written in a describe keyword, we have conditionals called} beforeEach() and it(), the actual test codes are written inside the it()
     - {you can also do describe nesting} like having describes inside a describe and more beforeEach( ) and it()
     ==> The rest of the code and details are in the test.js code file found in the test folder
   
@@ -627,8 +634,8 @@ otherwise the library must be deployed and then linked before deploying the cont
 
 #==== Lesson 7=====#
 
-# Hardhat found me 
-   - {first as always in a new project we add our hardhat dependencies} yarn dlx hardhat --init or yarn hardhat --init {and you are using npm} npx hardhat --init 
+# Hardhat fund me 
+   - {first as always in a new project we add our hardhat dependencies} yarn dlx hardhat --init or yarn hardhat --init {and if you are using npm} npx hardhat --init 
    - ESLint is a javascript linter that helps you automatically find and fix problems in your code.
    - Linting however is the process of running a program to analyz a code for potential errors (solLint, ESLint).
    - {instead of always using scripts to deploy our contracts which could constitute errors we could use the hardhat deploy package} yarn add --dev hardhat-deploy
@@ -652,28 +659,27 @@ otherwise the library must be deployed and then linked before deploying the cont
 
 # Mocking & helper hardhat-config 
 
-    - helper-hardhat-config.helper-hardhat-config.js is a separate configuration file that holds network-specific constants and metadata used across your deploy scripts. 
+    - helper-hardhat-config.js is a separate configuration file that holds network-specific constants and metadata used across your deploy scripts. 
     Instead of hardcoding values like Chainlink price feed addresses or chain IDs directly in your deploy scripts, you centralize them here and import as needed. It typically contains:
 
        * networkConfig — maps chain IDs to network-specific values (price feed addresses, VRF coordinators, etc.)
        * developmentChains — list of local networks so deploy scripts know when to use mocks instead of real contracts
        * Mock constants — like DECIMALS and INITIAL_ANSWER for local mock deployments
 
-        Keeps your deploy scripts clean and makes adding new networks as simple as dropping a new entry in networkConfig.
+        it Keeps your deploy scripts clean and makes adding new networks as simple as dropping a new entry in networkConfig.
 
     - Mocking in Hardhat is the practice of deploying fake versions of external contracts (like Chainlink price feeds) 
-    on your local network since those real contrac…Mocking in Hardhat is the practice of deploying fake versions of external contracts (like Chainlink price feeds) 
-    on your local network since those real contracts don't exist on hardhat or localhost.
+    on your local network since those real contract don't exist on hardhat or localhost.
 
        * MockV3Aggregator.sol — a fake Chainlink price feed contract you deploy locally that mimics the real one's interface
-       * A mock deploy script (e.g. 00-deploy-mocks.js) — checks if you're on a development chain using developmentChains, and if so deploys the mock instead of pointing to a real feed address
+       * A mock deploy script (e.g. 00-deploy-mocks.js) — checks if you're on a development chain using developmentChains, and if so, deploys the mock instead of pointing to a real feed address
        * DECIMALS and INITIAL_ANSWER from your helper-hardhat-config.js — used as constructor args when deploying the mock to simulate a realistic price feed response
 
     The flow is: if local → deploy mock and use its address; if testnet/mainnet → grab the real price feed address from networkConfig. This lets you test your contracts fully offline without needing
     real network connections or spending testnet ETH.
 
     - Sometimes you may just need to import the v3 from a github thingy like avee using at @chainlink/contracts 
-    - {one common problem to run into is working with contracts that are not in the same version of solidity you are Using you can resolve that issue by adding this to your config file}
+    - {one common problem to run into is working with contracts that are not in the same version of solidity you are Using, you can resolve that issue by adding this to your config file}
             solidity: {
                 compilers: [{version:"0.8.28"}, {version:"0.6.8"}]
             } ,
@@ -714,12 +720,59 @@ hardhat-deploy does'nt work for v3
 
 # Storage in Solidity   
     - Storage is like a giant array or a giant list that keeps a list of all the variables we create.
-    - Constant or immutable variables do not take up a slots in the storage  
+    - Constant or immutable variables, they do not take up a slots in the storage  
     - Variables whos scope are within a function do not take up a slot in storage, thus they don't persist.
+    - A persistent variable is a variable that gets written to storage
     - in order to make retrieving and storing variables take less gas than it normally does, you can add (load) it to memory, thus with this it does not repeadedly
          keep going to storage to read and store which costs gas 
-    - Do not forget that mappings can't be loaded into memory, cause it's too wacky.
+    - Do not forget that mappings can't be loaded into memory, cause it's too wacky. do check out opcodes.
          
 ## Staging Tests
+    - Staging tests are the kind of tests we can use on an actual testnet.
+    ==> code example is in the staging folder in fundme-using-hardhat folder
+# Pushing to github
+    - {to create a new branch} git init -b main 
+    - {to check the staged and not staged  for commiting} git status 
+    - { to stage your codes for commiting use} git add .
+    - { to commit } git commit -m " details about your commit"
+    - { to add a remote repo origin} git remote add origin <your repo url>
+    - {to check run } git remote -v  
+    - {if you are pushing for the first this how you are gonna go about it} git push origin main {{ thus is going to prompt you for authentication}}
+    - { to push} git push
 
+#===== Lession 8 =====# {Intro to frontend and fullstack}
+    --> Because not every user of our contracts are developers, we have to create a UI for them to interract with our smart contract
+    - {When building Dapps we ususally have two repos} One for the smart-contract, and one for the frontend/ website.
+    - FullStack in web3 is the combination of : Smart-Contracts(backend) and Html, Css, javascript and all the Ui websity stuff(frontend)
+    
+        == How Websites in web3 interacts with the blockchain and work with web3 wallets.
+
+            - When you install an extension in your browser, they automatically get injected into a window object in javascript.
+            - If a developer tool is pulled up in a browser, and you head to the console and type window and enter, you would see all the object that site is made of,
+                ..additionally if you have any ethereum/ EVM related extension installed, you can type window.ethereum to pull up their objects. you can even check for others specifically
+    - {you can use yarn to install a http-sever in other to display your html page or use live server extension if you are on VScode} yarn add --dev http-server
+    - {before you start anything on the frontend check and make the window.ethereum exits, cause that's the only way it can connect to the blockhain} you can use javascript if statement to check
+    - {in order to prompt a user to connect wallet we use the method eth_requestAccount} window.ethereum.request({method: "eth_requestAccount"}).
+
+# ES6 Frontend JS vs NodeJs
+    - In frontend, just require is used to import stuff in NodeJs, it can't actually be used in frontend js 
+    - To send a Transaction we need {Provider(connection to the blockchain), wallet/signer, contract(contractAddress, ABI, signer)}
+    - { instead of importing modules all over, we could use the ethers CDN-library, but there is an issue, the CDN has been shutdown due to too much bandwidth requirements that increases cost, but here here is the alternative}
+       > https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.esm.min.js, to import use ( import {ethers} from "https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.esm.min.js" ), and this because we are working with
+       frontend/webbrowser. 
+       > {Another way to do the import is to copy the entire data you find when you open the link, then create a file called ethers-5.6.esm.min.js, and them import from that file path} 
+    - When importing the script, instead of setting the type to text/javascript, use module instead, this allows you to import modules and use them in your projects.
+
+# Sending a Transaction from a Website 
+    - Web3Provider is a object in ethers that allows us wrap around web3 wallets e.g metamask.
+    - This what a lot of project do {
+        - Create a Constant,js file and inside of it we store our address and abi for out contract deployment and interraction.
+        - During this stage if you are working with a team, you have to interract with the backend team, inorder to get the right address and ABI
+        - however if you are a fullstack, go to artifacts of your smart-contract and get those stuff from the json file, and then save it as a variable in the constants.js file, make it and export variable.
+        - Then import  the abi into the script file from the constants.js file 
+        - also add the contract address and export it in the same way
+    
+    }
+# Resetting and account in metamask
+    -
 

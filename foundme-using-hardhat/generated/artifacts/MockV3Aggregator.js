@@ -304,7 +304,7 @@ export const Artifact_MockV3Aggregator = /** @type {const} **/ ({
   "storageLayout": {
     "storage": [
       {
-        "astId": 255,
+        "astId": 264,
         "contract": "project/contracts/tests/MockV3Aggregator.sol:MockV3Aggregator",
         "label": "decimals",
         "offset": 0,
@@ -312,7 +312,7 @@ export const Artifact_MockV3Aggregator = /** @type {const} **/ ({
         "type": "t_uint8"
       },
       {
-        "astId": 257,
+        "astId": 266,
         "contract": "project/contracts/tests/MockV3Aggregator.sol:MockV3Aggregator",
         "label": "latestAnswer",
         "offset": 0,
@@ -320,7 +320,7 @@ export const Artifact_MockV3Aggregator = /** @type {const} **/ ({
         "type": "t_int256"
       },
       {
-        "astId": 259,
+        "astId": 268,
         "contract": "project/contracts/tests/MockV3Aggregator.sol:MockV3Aggregator",
         "label": "latestTimestamp",
         "offset": 0,
@@ -328,7 +328,7 @@ export const Artifact_MockV3Aggregator = /** @type {const} **/ ({
         "type": "t_uint256"
       },
       {
-        "astId": 261,
+        "astId": 270,
         "contract": "project/contracts/tests/MockV3Aggregator.sol:MockV3Aggregator",
         "label": "latestRound",
         "offset": 0,
@@ -336,7 +336,7 @@ export const Artifact_MockV3Aggregator = /** @type {const} **/ ({
         "type": "t_uint256"
       },
       {
-        "astId": 265,
+        "astId": 274,
         "contract": "project/contracts/tests/MockV3Aggregator.sol:MockV3Aggregator",
         "label": "getAnswer",
         "offset": 0,
@@ -344,7 +344,7 @@ export const Artifact_MockV3Aggregator = /** @type {const} **/ ({
         "type": "t_mapping(t_uint256,t_int256)"
       },
       {
-        "astId": 269,
+        "astId": 278,
         "contract": "project/contracts/tests/MockV3Aggregator.sol:MockV3Aggregator",
         "label": "getTimestamp",
         "offset": 0,
@@ -352,7 +352,7 @@ export const Artifact_MockV3Aggregator = /** @type {const} **/ ({
         "type": "t_mapping(t_uint256,t_uint256)"
       },
       {
-        "astId": 273,
+        "astId": 282,
         "contract": "project/contracts/tests/MockV3Aggregator.sol:MockV3Aggregator",
         "label": "getStartedAt",
         "offset": 0,

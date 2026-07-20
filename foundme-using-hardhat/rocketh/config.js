@@ -1,12 +1,13 @@
 export const config = {
   accounts: {
     deployer: { default: 0 },
-    user: { default: 1 },
+    user: {
+      default: 1,
+      11155111: 0,
+    },
   },
 };
 
-// This file tells rocketh which "extensions" (extra abilities) to load.
-// @rocketh/deploy gives you the `deploy()` function used in your deploy scripts.
 import * as deployExtension from "@rocketh/deploy";
 const extensions = {
   ...deployExtension,

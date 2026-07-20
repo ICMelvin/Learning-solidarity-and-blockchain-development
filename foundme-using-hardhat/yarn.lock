@@ -35,7 +35,7 @@
   resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.10.1.tgz#63430d04bd8c5e74f8d7d049338f1cd9d4f02069"
   integrity sha512-96Z2IP3mYmF1Xg2cDm8f1gWGf/HUVedQ3FMifV4kG/PQ4yEP51xDtRAEfhVNt5f/uzpNkZHwWQuUcu6D6K+Ekw==
 
-"@adraffy/ens-normalize@^1.11.0":
+"@adraffy/ens-normalize@1.11.1", "@adraffy/ens-normalize@^1.11.0":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.11.1.tgz#6c2d657d4b2dfb37f8ea811dcb3e60843d4ac24a"
   integrity sha512-nhCBV3quEgesuf7c7KYfperqSS14T8bYuvJ8PcLJp6znkZpFc0AuW4qBtr8eKVyPPe/8RSr7sglCWPU5eaxwKQ==
@@ -913,15 +913,34 @@
   dependencies:
     "@nomicfoundation/hardhat-utils" "^4.1.3"
 
-"@nomicfoundation/hardhat-ethers@^4.0.13":
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-ethers/-/hardhat-ethers-4.0.13.tgz#af1f43f424a958454a3a7baa1ebc15b2aab23f06"
-  integrity sha512-HBiWoMFf7tLr1X3T82mKHXUSEuHU7PVUibWmfP6gSn5l38RQbcrt/f64zoNbyHh6pdiC7WwQPJHP3bCAfbd2oA==
+"@nomicfoundation/hardhat-errors@^3.0.16":
+  version "3.0.16"
+  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-errors/-/hardhat-errors-3.0.16.tgz#9c59d333a168f4de209cee22b2488558e31159cc"
+  integrity sha512-z3hxWX2vG0C0JBojKHcUjArOXftHQZ2cPnHOSReILq6/UZXuzm9WIEBDPbotH2tgjRDKBlh0+XOpJZjFhEODIw==
   dependencies:
-    "@nomicfoundation/hardhat-errors" "^3.0.15"
-    "@nomicfoundation/hardhat-utils" "^4.1.2"
+    "@nomicfoundation/hardhat-utils" "^4.1.4"
+
+"@nomicfoundation/hardhat-ethers-chai-matchers@^3.0.11":
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-ethers-chai-matchers/-/hardhat-ethers-chai-matchers-3.0.11.tgz#5f77844a6005c6d24598246e7425a6587f96b73f"
+  integrity sha512-pAOTjBQRNKqCh8cLJD6dsOeGWrU8fe9Wrz4UqO03qhJbwmj0md2bq2LEPaMZAgDtxVS0ZteiVGx64DgBfyb7XA==
+  dependencies:
+    "@nomicfoundation/hardhat-utils" "^4.1.4"
+    "@types/chai-as-promised" "^8.0.1"
+    chai-as-promised "^8.0.0"
+    deep-eql "^5.0.1"
+
+"@nomicfoundation/hardhat-ethers@^4.0.14":
+  version "4.0.14"
+  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-ethers/-/hardhat-ethers-4.0.14.tgz#a21fe1864d1df6539987f45e47938a88a4161719"
+  integrity sha512-28iyixC2g5R9SCTNR8m28SYG/sJiijx4I0F4dLTJR6SZO1x4SLJCC0VVAPFjqSqb1dt/PiHu6K4+C7ox/3vjfw==
+  dependencies:
+    "@nomicfoundation/hardhat-errors" "^3.0.16"
+    "@nomicfoundation/hardhat-utils" "^4.1.4"
+    "@nomicfoundation/hardhat-zod-utils" "^3.0.5"
     ethereum-cryptography "^2.2.1"
     ethers "^6.14.0"
+    zod "^3.23.8"
 
 "@nomicfoundation/hardhat-network-helpers@^3.0.10":
   version "3.0.10"
@@ -964,10 +983,35 @@
     rfdc "^1.3.1"
     undici "^6.16.1"
 
+"@nomicfoundation/hardhat-utils@^4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-utils/-/hardhat-utils-4.1.4.tgz#16940b5cd24ba4fdc8c8926d92e7c190347b82c0"
+  integrity sha512-DEAu/uIBTNkPedfTnokh6tKum/Kxr5xMlh8ZovBGqlKA8AlxP26J0PBjK73fmeUQ0sh432suWksSr5CtHVG04A==
+  dependencies:
+    "@streamparser/json-node" "^0.0.22"
+    env-paths "^2.2.0"
+    ethereum-cryptography "^2.2.1"
+    fast-equals "^5.4.0"
+    json-stream-stringify "^3.1.6"
+    rfdc "^1.3.1"
+    undici "^6.16.1"
+
 "@nomicfoundation/hardhat-vendored@^3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-vendored/-/hardhat-vendored-3.0.4.tgz#32c52b84f08405ffe9e379c22976d63df83cc0d9"
   integrity sha512-RO8Otj1FvRvxJmXzkxh1vTwK/+cqSVPYLqY6RrWkmzHEEcxnAwAFsBYdW7xyTEyW/pVbSSNd2gs3aoGdGZaoNA==
+
+"@nomicfoundation/hardhat-verify@^3.0.21":
+  version "3.0.21"
+  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-verify/-/hardhat-verify-3.0.21.tgz#daf26d15a8b2c62c246e2ba4724f9af24a68fb6d"
+  integrity sha512-kaV9BfmFw5VbjMEyyQxoXVe0qwkEUi7wfi/WVTiVU0mdUUwojvk8hv0oT87vHO6FeYVGAcN/FEwmYZqBOiip6Q==
+  dependencies:
+    "@ethersproject/abi" "^5.8.0"
+    "@nomicfoundation/hardhat-errors" "^3.0.16"
+    "@nomicfoundation/hardhat-utils" "^4.1.4"
+    "@nomicfoundation/hardhat-zod-utils" "^3.0.5"
+    cbor2 "^1.9.0"
+    zod "^3.23.8"
 
 "@nomicfoundation/hardhat-zod-utils@^3.0.4", "@nomicfoundation/hardhat-zod-utils@^3.0.5":
   version "3.0.5"
@@ -1314,6 +1358,26 @@
   dependencies:
     defer-to-connect "^2.0.1"
 
+"@types/chai-as-promised@^8.0.1":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@types/chai-as-promised/-/chai-as-promised-8.0.2.tgz#5ac957d346fec5b686b62606baa5704787669704"
+  integrity sha512-meQ1wDr1K5KRCSvG2lX7n7/5wf70BeptTKst0axGvnN6zqaVpRqegoIbugiAPSqOW9K9aL8gDVrm7a2LXOtn2Q==
+  dependencies:
+    "@types/chai" "*"
+
+"@types/chai@*":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-5.2.3.tgz#8e9cd9e1c3581fa6b341a5aed5588eb285be0b4a"
+  integrity sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==
+  dependencies:
+    "@types/deep-eql" "*"
+    assertion-error "^2.0.1"
+
+"@types/deep-eql@*":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@types/deep-eql/-/deep-eql-4.0.2.tgz#334311971d3a07121e7eb91b684a605e7eea9cbd"
+  integrity sha512-c9h9dVVMigMPc4bwTvC5dxqtqJZwQPePsWjPlpSOnojbor6pGqdk541lfA7AqFQr5pB1BRdq0juY9db81BwyFw==
+
 "@types/http-cache-semantics@^4.0.2":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.2.0.tgz#f6a7788f438cbfde15f29acad46512b4c01913b3"
@@ -1550,6 +1614,11 @@ assertion-error@^1.1.0:
   resolved "https://registry.yarnpkg.com/assertion-error/-/assertion-error-1.1.0.tgz#e60b6b0e8f301bd97e5375215bda406c85118c0b"
   integrity sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==
 
+assertion-error@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/assertion-error/-/assertion-error-2.0.1.tgz#f641a196b335690b1070bf00b6e7593fec190bf7"
+  integrity sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==
+
 ast-parents@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/ast-parents/-/ast-parents-0.0.1.tgz#508fd0f05d0c48775d9eccda2e174423261e8dd3"
@@ -1663,6 +1732,18 @@ callsites@^3.0.0:
   resolved "https://registry.yarnpkg.com/callsites/-/callsites-3.1.0.tgz#b3630abd8943432f54b3f0519238e33cd7df2f73"
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
+cbor2@^1.9.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/cbor2/-/cbor2-1.12.0.tgz#b1cae821ee8d673cff70b078c3f08041bc47bdde"
+  integrity sha512-3Cco8XQhi27DogSp9Ri6LYNZLi/TBY/JVnDe+mj06NkBjW/ZYOtekaEU4wZ4xcRMNrFkDv8KNtOAqHyDfz3lYg==
+
+chai-as-promised@^8.0.0:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/chai-as-promised/-/chai-as-promised-8.0.2.tgz#cd9b77afaa976383eb4cbef9463ac5230f7a1cba"
+  integrity sha512-1GadL+sEJVLzDjcawPM4kjfnL+p/9vrxiEUonowKOAzvVg0PixJUdtuDzdkDeQhK3zfOE76GqGkZIQ7/Adcrqw==
+  dependencies:
+    check-error "^2.1.1"
+
 chai@^4.3.4:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/chai/-/chai-4.5.0.tgz#707e49923afdd9b13a8b0b47d33d732d13812fd8"
@@ -1700,6 +1781,11 @@ check-error@^1.0.3:
   integrity sha512-iKEoDYaRmd1mxM90a2OEfWhjsjPpYPuQ+lMYsoxB126+t8fw7ySEO48nmDg5COTjxDI65/Y2OWpeEHk3ZOe8zg==
   dependencies:
     get-func-name "^2.0.2"
+
+check-error@^2.1.1:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/check-error/-/check-error-2.1.3.tgz#2427361117b70cca8dc89680ead32b157019caf5"
+  integrity sha512-PAJdDJusoxnwm1VwW07VWwUN1sl7smmC3OKggvndJFadxxDRyFJBX/ggnu/KE4kQAB7a3Dp8f/YXC1FlUprWmA==
 
 chokidar@^4.0.3:
   version "4.0.3"
@@ -1803,6 +1889,11 @@ deep-eql@^4.1.3:
   integrity sha512-SUwdGfqdKOwxCPeVYjwSyRpJ7Z+fhpwIAtmCUdZIWZ/YP5R9WAsyuSgpLVDi9bjWoN2LXHNss/dk3urXtdQxGg==
   dependencies:
     type-detect "^4.0.0"
+
+deep-eql@^5.0.1:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/deep-eql/-/deep-eql-5.0.2.tgz#4b756d8d770a9257300825d52a2c2cff99c3a341"
+  integrity sha512-h5k/5U50IJJFpzfL6nO9jaaumfjO/f2NjK/oYB2Djzm4p9L+3T9qWpZqZ2hAbLPuuYq9wrU08WQyBTL5GbPk5Q==
 
 deep-extend@^0.6.0:
   version "0.6.0"
@@ -1973,7 +2064,7 @@ ethereum-cryptography@^2.2.1:
     "@scure/bip32" "1.4.0"
     "@scure/bip39" "1.3.0"
 
-ethers@^6.14.0, ethers@^6.16.0:
+ethers@^6.14.0:
   version "6.16.0"
   resolved "https://registry.yarnpkg.com/ethers/-/ethers-6.16.0.tgz#fff9b4f05d7a359c774ad6e91085a800f7fccf65"
   integrity sha512-U1wulmetNymijEhpSEQ7Ct/P/Jw9/e7R1j5XIbPRydgV2DjLVMsULDlNksq3RQnFgKoLlZf88ijYtWEXcPa07A==
@@ -1985,6 +2076,19 @@ ethers@^6.14.0, ethers@^6.16.0:
     aes-js "4.0.0-beta.5"
     tslib "2.7.0"
     ws "8.17.1"
+
+ethers@^6.17.0:
+  version "6.17.0"
+  resolved "https://registry.yarnpkg.com/ethers/-/ethers-6.17.0.tgz#ad85ee1fc45fe2d95cb1e21c4e3ff9f7f1b093cc"
+  integrity sha512-BpyrpIPJ3ydEVow8zGaz1DuPS7YU8DcWxuBnY9a0UA/lvAPwrMr+EPXsfrul628SRaekPNeIM4UFh/91GWZang==
+  dependencies:
+    "@adraffy/ens-normalize" "1.11.1"
+    "@noble/curves" "1.2.0"
+    "@noble/hashes" "1.3.2"
+    "@types/node" "22.7.5"
+    aes-js "4.0.0-beta.5"
+    tslib "2.7.0"
+    ws "8.21.0"
 
 eventemitter3@5.0.1:
   version "5.0.1"
@@ -3395,7 +3499,7 @@ ws@8.20.1:
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.20.1.tgz#91a9ae2b312ccf98e0a85ec499b48cef45ab0ddb"
   integrity sha512-It4dO0K5v//JtTXuPkfEOaI3uUN87iYPnqo/ZzqCoG3g8uhA66QUMs/SrM0YK7/NAu+r4LMh/9dq2A7k+rHs+w==
 
-ws@^8.18.0:
+ws@8.21.0, ws@^8.18.0:
   version "8.21.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.21.0.tgz#012e413fc07429945121b0c153158c4343086951"
   integrity sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==

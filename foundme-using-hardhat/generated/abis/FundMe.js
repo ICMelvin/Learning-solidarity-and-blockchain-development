@@ -74,6 +74,19 @@ export const Abi_FundMe = /** @type {const} **/ ([
   },
   {
     "inputs": [],
+    "name": "getPriceFeed",
+    "outputs": [
+      {
+        "internalType": "contract AggregatorV3Interface",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "owner",
     "outputs": [
       {

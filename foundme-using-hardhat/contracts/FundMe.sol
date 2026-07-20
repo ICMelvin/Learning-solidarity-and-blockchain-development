@@ -33,6 +33,9 @@ contract FundMe {
     }
 
     // payable = this function can receive ETH
+    function getPriceFeed() public view returns (AggregatorV3Interface) {
+    return s_priceFeed;
+}
     function fund() public payable {
         // msg.value is in wei — convert it to USD using the library
         // then check it meets the minimum
