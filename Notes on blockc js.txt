@@ -773,6 +773,13 @@ hardhat-deploy does'nt work for v3
         - also add the contract address and export it in the same way
     
     }
-# Resetting and account in metamask
-    -
+
+# Listening for events and completed transaction
+    - {Ethers comes with a way for us to listen for transaction response } provider.once()
+    - (a Promise() either resolves or rejects)
+    
+# Reading from the blockchain
+    - {to read your balance from a blochain} ethers.utils.formatEther(balance) after doing provider.getBalance(contractAddress)
+
+# Withdrawal from a blochain functiom
 
