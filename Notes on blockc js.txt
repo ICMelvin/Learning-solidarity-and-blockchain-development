@@ -782,4 +782,39 @@ hardhat-deploy does'nt work for v3
     - {to read your balance from a blochain} ethers.utils.formatEther(balance) after doing provider.getBalance(contractAddress)
 
 # Withdrawal from a blochain functiom
+    -* code example is in the script.js file 
+
+#========== Lesson 9 =========#{Hardhat Smart-Contracts Lottery/Raffle}
+    
+    # Problem Definition: one of the first things to do when presented with a task as a Blockchain software engineer is to define the problem and specify in modules what you want 
+        to achieve step by step.
+        ** The code that implements this technique is found in the contracts folder as Raffle.sol
+    
+    # Introduction to Events and logging (Whenever we update a dynamic object like; array or mapping we always want to emit an event)
+
+        * The Evm has a logging functionality,  logs in tern stores data in a specifically indexed data structure level that maps all the way to the blockchain level.
+        * We can read this logs from the blockchain nodes that we run.
+        * Events however are found inside logs, events and logs are used synanymously.
+        * Events allow you to print something to this logs in a way that is gas efficient since you are not using a storage variable which consumes gas.
+        * Events and logs are stored in this special indexed data structre that smart contracts can't access.
+        * Due to the fact that smart contract can't access those logs and events where it's stored, that's why it's cheaper.
+        * Each of this events is tied to the smart contract or addresses that emitted this events.
+        * Instead of always going through all the variables or flipping through them, you could just listen for events and when an event is emitted a particular function tied to that
+         condition is executed.
+        * A chainlink Oracle actually works by listening for events in order for it to request a random number or make an API call etc.
+        * When the request are much, you then need to index them in a way that you can query them at a later date.
+        * The graph also listens for events and then store them so that they can easly be queried.
+        * Events can also be used for testing.
+        * A topic is an indexed parameter.
+        * Indexed parameter are easier to query and search for. this is also utilized in database optimization.
+        * We need to emit the indexed data so that we can store them in the loggings of the EVM.
+        * This is how an event is brokendown{
+            - Address of the contract
+            - Topics or indexed parameter of the event.
+            - The ABI none indexed parameter of the event.
+        }
+        
+    # Events in the Raffle.sol
+
+    
 

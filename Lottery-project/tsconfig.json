@@ -4,9 +4,8 @@
     "module": "node20",
     "target": "es2023",
     "skipLibCheck": true,
-    "rootDir": "./foundme-using-hardhat",
-    "types": ["node"],
+    "outDir": "dist",
+    "types": ["node", "mocha"],
     "verbatimModuleSyntax": true
-  },
-  "include": ["./foundme-using-hardhat/**/*"]
+  }
 }
