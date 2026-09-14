@@ -12,14 +12,21 @@
   // Chainlink Price Feeds
 
 pragma solidity ^0.8.28;
+import {VRFConsumerBaseV2Plus} from "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
+import {VRFV2PlusClient} from "@chainlink/contracts/src/v0.8/vrf/dev/libraries/VRFV2PlusClient.sol";
    error Raffle__NotEnoughEthEntered();
-contract Raffle{
+  
+abstract contract Raffle is VRFConsumerBaseV2Plus { // without the keyword abstract the code will break
   // State Variables
   uint256 private immutable i_entranceFee;
   address payable[] private s_players;
+
+  //Events 
+  event raffleEnterance(address indexed player); 
   // Functions
-  constructor(uint256 entranceFee){
+  constructor(uint256 entranceFee, address vrfCoordinator) VRFConsumerBaseV2Plus(vrfCoordinator){ // you can add the subOwner address here as well if you want to use it for the VRFConsumerBaseV2Plus constructor
     i_entranceFee = entranceFee;
+    
   }
   
   // For entering the game and keeping track of players
@@ -27,8 +34,11 @@ contract Raffle{
     if(msg.value < i_entranceFee){
       revert Raffle__NotEnoughEthEntered();
     }
-    s_players.push(payable(msg.sender));
+    s_players.push(payable(msg.sender)); // this emits an event when we update a dynamic array or mapping 
+    emit raffleEnterance(msg.sender);
   }
+
+
   
   // View functions for seeing the entrance fee and players
   function seeEntranceFee() public view returns(uint256){
@@ -38,5 +48,10 @@ contract Raffle{
     return s_players[index];
   }
   
-  //funtion pickWinner( )public{}
+  function pickWinner() external {
+    
+  }
+  function fulfillRandomWords(uint256 requestId, uint256[] calldata randomWords) internal  override{
+    
+  }
 }

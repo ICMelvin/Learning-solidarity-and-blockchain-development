@@ -816,5 +816,38 @@ hardhat-deploy does'nt work for v3
         
     # Events in the Raffle.sol
 
-    
+        * Events get emmitted a data storage outside of our contract
+        * the logic behind creating a n event is that you create an event outside a function and then emit it inside the function you created it for. {raffle.sol} shows it.
+        * should be declared below state variables and above constructor or functions.
 
+    # Introduction to chainlink VRF (randomness in web3)
+
+        * Chainlink VRF(Verifyable Random Function) generates a random and Verifyable number that a smart contract can access without compromising security or usability.
+        * Initially in chainlink VRF you found your contracts with link, but in V2 you'd be funding a suscription.
+        * A suscription in this case is an account that allows you to fund and maintain balance for multiple consumer contracts.
+        * Chainlink VRF is used to build systems that rely on unpredictable outcomes e.g Raffle games and NFTs.
+
+        -- Examples of systems you can build with chainlink VRF --
+
+        * Building blockchain games and NFTs.
+        * Random assignment of duties and resources. For example, randomly assigning judges to cases.
+        * Choosing a representative sample for consensus mechanisms.
+
+        -- There are two Methods for requesting Randomness --
+
+        * Suscription: You can create a suscription account and fund it either with native token or Link, this account is going to house multiple consumer contracts
+          when the consumer contract request for randomness the cost is not calculated until the randomness request is fullfilled and then the suscription balance is deducted 
+          accordingly.
+
+        * Direct Funding: In this method consumer contracts directly pay with native tokens or Links when they request randomness.
+
+    # Implementing Chainlink VRF (into)
+
+        * Eternal functions are cheeper than public functions, external functions can't be read by our contract.
+        * Chainlink VRF is a 2 transaction process
+            =- Request the randomness
+            =- Do something with it.
+
+    # Implementing Chainlink VRF Request
+
+        *
