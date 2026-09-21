@@ -1,0 +1,9 @@
+New Course{ Updraft.cyfrin.io}
+ NB: Struct is a keyword in solidity used to a type that groups multiple variables.
+    - To Declare a variable you do it in this order {Type, visibility, name}
+    - To declare a function you do it in this order {Function, name(), visibility}
+    - View reads from storage and pure reads from memory
+    - Memory and calldata are temporal storing allocation while storage is permanent cause it persists
+    - ' Override ' is only used on functions inside a contract that inherited from a parent contract,'virtual' is added to the function you want to override in the parent contract
+    - The ' new ' tells the compiler that a new contract instance is intended to be deployed after compilation.
+    - Decentralized event driven executions are called chainlink keepers
